@@ -1,0 +1,36 @@
+﻿<div class="Login-bg">
+  <div>
+    <div class="Login-card">
+      <div class="row">
+        <h3><b>小程序-超市后台管理系统</b></h3>
+      </div>
+      <div class="Login-line"></div>
+      <div class="row">
+        <div class="col-sm-12 inner-addon left-addon">
+          <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+          <input type="text" class="form-control" placeholder="请输入用户名..." ng-model="User.Account"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 inner-addon left-addon">
+          <i class="fa fa-lock" aria-hidden="true"></i>
+          <input type="password" class="form-control" placeholder="请输入密码..." ng-model="User.Pwd"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8  inner-addon left-addon">
+          <i class="fa fa-key" aria-hidden="true"></i>
+          <input type="text" class="form-control" placeholder="请输入验证码..." ng-model="User.Code"/>
+        </div>
+        <div class="col-sm-4">
+          <img ng-src={{img}} height="34" width="80" style="cursor:pointer;" ng-click="ChangeCode()" />
+        </div>
+      </div>
+      <button class="Login-button" ng-click="Login()">登录</button>
+      <p class="Login-p">Copyright 2017 hendao. All Rights Reserved.</p>
+    </div>
+  </div>
+  <div class="Login-note">
+    系统仅支持Edge、Google Chrome、Mozilla Firefox以及其它主流的浏览器，如您的浏览器无法使用本系统，请更换其它浏览器！
+  </div>
+</div>

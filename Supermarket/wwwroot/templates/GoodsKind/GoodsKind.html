@@ -1,0 +1,183 @@
+﻿<div id="ribbon">
+    <ol class="breadcrumb">
+        <li>
+            <span class="glyphicon glyphicon-home"></span>
+            首页
+        </li>
+        <li>商品管理</li>
+        <li class="active">商品子类</li>
+    </ol>
+</div>
+<div>
+    <ol class="breadcrumb" ng-if="ShowInfo">
+        <li><button class="btn btn-primary" data-toggle="modal" data-target="#AddObj" ng-click="addModal()">增加</button></li>
+        <li>
+          <select id="Select_bigkind" ng-init="SelectValue = SelectValue || '0'" ng-model="SelectValue" ng-change="SelectChange()">
+            <option value="0" selected="selected">--请选择商品大类--</option>
+            <option value="{{BigKindList.goodsBigKindId}}" ng-repeat="BigKindList in BigKindLists track by $index">
+              {{BigKindList.name}}
+            </option>
+          </select>
+        </li>
+    </ol>
+    <!--   列表-->
+    <table class="table main-table table-hover table-bordered" style="margin: 5px">
+        <thead>
+            <tr>
+                <th class="text-center">子类编号</th>
+                <th class="text-center">子类名称</th>
+                <th class="text-center">排序值</th>
+                <th class="text-center">图片</th>
+                <th class="text-center" ng-if="ShowInfo">操作</th>
+                <th class="text-center" ng-if="!ShowInfo">所属商家</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="KindInfo in KindInfos">
+                <td>{{KindInfo.goodsKindId}}</td>
+                <td>{{KindInfo.name}}</td>
+                <td>{{KindInfo.index}}</td>
+                <td><img ng-src="{{KindInfo.img}}" height="100" width="80" /></td>
+                <td class="text-center" ng-if="ShowInfo">
+                    <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ModifyObj" ng-click="EditGoodsKind(KindInfo)" ng-show="EditGoodsKind">编辑</a>
+                    <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#DelObj" ng-click="DeleteGoodsKind(KindInfo.goodsKindId)" ng-show="DeleteGoodsKind">删除</a>
+                </td>
+                <td ng-if="!ShowInfo">{{KindInfo.sysUserName}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 新增模态框-->
+    <div class="modal fade" id="AddObj" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="AddLabel">
+                        新增子类
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="pageFormContent" layouth="58">
+                        <div class="unit">
+                            <label>子类名称：</label>
+                            <input type="text" name="name" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="Kind.Name">
+                        </div>
+                        <div class="unit">
+                            <label>子类排序值：</label>
+                            <input type="text" name="name" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="Kind.Index">
+                        </div>
+                      <div class="unit">
+                        <label>选择大类：</label>
+                        <select ng-model="Kind.GoodsBigKindId" ng-options='x.goodsBigKindId as x.name for x in BigKindLists' required>
+                          <option selected="" value="">请选择</option>
+                        </select>
+                      </div>
+                        <div class="unit">
+                            <label>子类图片：</label>
+                            <div class="PerPhoto_ImgStyle" ngf-select="uploadFiles($files)" accept="image/png,image/jpg,image/jpeg,imge/bmp,image/gif" ngf-max-size="2MB">
+                                <img ng-src={{Img}} height="200" width="180">
+                            </div>
+                        </div>
+
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="closeWareHouse()">
+                        关闭
+                    </button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="PostKind(Kind)">
+                        确定
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <!--修改模态框-->
+    <div class="modal fade" id="ModifyObj" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="ModifyLabel">
+                        修改子类
+                    </h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="pageFormContent" layouth="58">
+                        <div class="unit">
+                            <label>子类名称：</label>
+                            <input type="text" name="username" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="KindE.name">
+                        </div>
+                    </div>
+                    <div class="pageFormContent" layouth="58">
+                        <div class="unit">
+                            <label>子类排序值：</label>
+                            <input type="text" name="username" class="required alphanumericchinese textInput" size="33" maxlength="20" value=""  ng-model="KindE.index">
+                        </div>
+                    </div>
+                  <div class="unit">
+                    <label>选择大类：</label>
+                    <select ng-model="KindE.goodsBigKindId" ng-options='x.goodsBigKindId as x.name for x in BigKindLists' required>
+
+                    </select>
+                  </div>
+                    <div class="pageFormContent" layouth="58">
+                        <div class="unit">
+                            <label>子类图片：</label>
+                            <div class="PerPhoto_ImgStyle" ngf-select="uploadFiles($files)" accept="image/png,image/jpg,image/jpeg,imge/bmp,image/gif" ngf-max-size="2MB">
+                                <img ng-src={{Img}} height="200" width="180">
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button type="button" data-dismiss="modal" class="btn btn-primary" ng-click="ModifyKind(KindE)()">
+                        确定
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <!-- 删除模态框-->
+    <div class="modal fade" id="DelObj" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="DelLabel">
+                        确认删除该子类？
+                    </h4>
+                </div>
+                <!--    <div class="modal-body">
+                        确认删除？
+                    </div>-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button type="button" data-dismiss="modal" class="btn btn-primary" ng-click="ConfirmDelete()">
+                        确定
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage"
+        max-size="maxSize" class="pagination pagination-sm" items-per-page="15" previous-text="上一页" next-text="下一页" first-text="首页" last-text="尾页"
+        ng-change="GetKind()"></ul>
+
+</div>
+

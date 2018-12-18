@@ -1,0 +1,238 @@
+﻿<div id="ribbon">
+  <ol class="breadcrumb">
+    <li>
+      <span class="glyphicon glyphicon-home"></span>
+      首页
+    </li>
+    <li>商家管理</li>
+    <li class="active">商家列表</li>
+  </ol>
+</div>
+<ol class="breadcrumb">
+  <li><button class="btn btn-primary" data-toggle="modal" data-target="#AddSysUser">新增</button></li>
+</ol>
+<table class="table main-table">
+  <thead>
+    <tr>
+        <th class="text-center">商家id</th>
+      <th class="text-center">商家名称</th>
+        <th class="text-center">商家账户</th>
+        <th class="text-center">配送范围</th>
+      <th class="text-center">操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="SysUser in SysUsers">  
+      <td class="text-center">{{SysUser.sysUserId}}</td>
+      <td class="text-center">{{SysUser.name}}</td>
+      <td class="text-center">{{SysUser.account}}</td>
+      <td class="text-center">{{SysUser.comment1}}  </td>
+      <td class="text-center">
+        <a  class="btn btn-primary btn-sm" data-toggle="modal" data-target="#EditSysUser" ng-click="EditThisSysUser(SysUser)">编辑</a>
+        <a  class="btn btn-primary btn-sm" data-toggle="modal" data-target="#DelSysUser" ng-click="DelThisSysUser(SysUser)">删除</a>
+        <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#InitPwd" ng-click="InitPwd(SysUser)">初始化密码</a>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+
+<!-- 新增模态框-->
+<div class="modal fade" id="AddSysUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+        <h4 class="modal-title">
+          新增系统商家
+        </h4>
+      </div>
+      <div class="modal-body">
+        <div class="pageFormContent" layouth="58">
+          <div class="unit">
+            <label>商家账号：</label>
+            <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="AddSysUserObj.Account">
+          </div>
+          <div class="unit">
+            <label>商家名称：</label>
+            <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="AddSysUserObj.Name">
+          </div>
+          <div class="unit">
+            <label>商家地址：</label>
+            <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="AddSysUserObj.Addr">
+          </div>
+          <div class="unit">
+            <label>商家电话：</label>
+            <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="AddSysUserObj.Phone">
+          </div>
+          <div class="unit">
+            <label>商家说明：</label>
+            <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="AddSysUserObj.Comments">
+          </div>
+            <div class="unit">
+                <label>商家微信OpenId：</label>
+                <input type="text" class="required alphanumericchinese textInput" size="33"  value="" ng-model="AddSysUserObj.Popenid">
+            </div>
+            <div class="unit">
+                <label>纬度：</label>
+                <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="AddSysUserObj.Latitude">
+            </div>
+            <div class="unit">
+                <label>经度：</label>
+                <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="AddSysUserObj.Longitude">
+            </div>
+            <div class="unit">
+                <label>配送范围：</label>
+                <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="AddSysUserObj.Comment1">
+            </div>
+            <div class="unit">
+                <label>起送范围：</label>
+                <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="AddSysUserObj.Price">
+            </div>
+            <div class="unit">
+                <label>订单成功模板Id：</label>
+                <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="AddSysUserObj.TemIdOrder">
+            </div>
+            <div class="unit">
+                <label>订单接单模板Id：</label>
+                <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="AddSysUserObj.TemIdAccept">
+            </div>
+            <div class="unit">
+                <label>订单发货模板Id：</label>
+                <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="AddSysUserObj.TemIdSend">
+            </div>
+            <div class="unit">
+                <label>订单拒绝模板Id：</label>
+                <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="AddSysUserObj.TemIdRefuse">
+            </div>
+       
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              关闭
+            </button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="AddSysUser()">
+              确定
+            </button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal -->
+    </div>
+  </div>
+</div>
+<!-- 修改模态框-->
+<div class="modal fade" id="EditSysUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+        <h4 class="modal-title">
+          修改系统商家
+        </h4>
+      </div>
+      <div class="modal-body">
+        <div class="pageFormContent" layouth="58">
+          <div class="unit">
+            <label>商家账号：</label>
+            <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="EditSysUser.account">
+          </div>
+          <div class="unit">
+            <label>商家名称：</label>
+            <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="EditSysUser.name">
+          </div>
+          <div class="unit">
+            <label>商家地址：</label>
+            <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="EditSysUser.addr">
+          </div>
+          <div class="unit">
+            <label>商家电话：</label>
+            <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="EditSysUser.phone">
+          </div>
+          <div class="unit">
+            <label>商家说明：</label>
+            <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="EditSysUser.comments">
+          </div>
+            <div class="unit">
+                <label>商家微信OpenId：</label>
+                <input type="text" class="required alphanumericchinese textInput" size="33"  value="" ng-model="EditSysUser.popenid">
+            </div>
+            <div class="unit">
+                <label>纬度：</label>
+                <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="EditSysUser.latitude">
+            </div>
+            <div class="unit">
+                <label>经度：</label>
+                <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="EditSysUser.longitude">
+            </div>
+            <div class="unit">
+                <label>配送范围：</label>
+                <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="EditSysUser.comment1">
+            </div>
+            <div class="unit">
+                <label>起送金额：</label>
+                <input type="text" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="EditSysUser.price">
+            </div>
+            <div class="unit">
+                <label>订单成功模板Id：</label>
+                <input type="text" class="required alphanumericchinese textInput" size="33"  value="" ng-model="EditSysUser.temIdOrder">
+            </div>
+            <div class="unit">
+                <label>订单接单模板Id：</label>
+                <input type="text" class="required alphanumericchinese textInput" size="33"  value="" ng-model="EditSysUser.temIdAccept">
+            </div>
+            <div class="unit">
+                <label>订单发货模板Id：</label>
+                <input type="text" class="required alphanumericchinese textInput" size="33"  value="" ng-model="EditSysUser.temIdSend">
+            </div>
+            <div class="unit">
+                <label>订单拒绝模板Id：</label>
+                <input type="text" class="required alphanumericchinese textInput" size="33" value="" ng-model="EditSysUser.temIdRefuse">
+            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              关闭
+            </button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="SureEditSysUser()">
+              确定
+            </button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal -->
+    </div>
+  </div>
+</div>
+<!-- 删除模态框-->
+<div class="modal fade" id="DelSysUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm cum-modal" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h3 class="modal-title">您是否确定删除该商家？</h3>
+      </div>
+      <div class="modal-footer ConfirmModel">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="SureDelSysUser()">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 初始化密码模态框-->
+<div class="modal fade" id="InitPwd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm cum-modal" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title">您是否确定初始化该商家密码？</h4>
+      </div>
+      <div class="modal-footer ConfirmModel">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="SureInit()">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+<ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage"
+    max-size="maxSize" class="pagination pagination-sm" items-per-page="15" previous-text="上一页" next-text="下一页" first-text="首页" last-text="尾页"
+    ng-change="GetSysUserList()"></ul>
+

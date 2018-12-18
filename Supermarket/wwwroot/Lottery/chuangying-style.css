@@ -1,0 +1,92 @@
+﻿body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;}
+body{color:#333; font-size:12px;font-family:"Microsoft YaHei"}
+ul,ol{list-style-type:none;}
+select,input,img,select{vertical-align:middle;}
+input{ font-size:12px;}
+a{ text-decoration:none; color:#000;}
+a:hover{color:#c00; text-decoration:none;}
+.clear{clear:both;}
+
+/* 大转盘样式 */
+.banner{display:block;width:95%;margin-left:auto;margin-right:auto;margin-bottom: 20px;}
+.banner .turnplate{display:block;width:100%;position:relative;}
+.banner .turnplate canvas.item{width:100%;}
+.banner .turnplate img.pointer{position:absolute;width:31.5%;height:42.5%;left:34.6%;top:23%;}
+/* 中奖名单样式 */
+@media screen and (max-width:800px){
+input,button,select,textarea{outline:none;}
+ul,li,dl,ol{list-style:none;}
+a{color:#666; text-decoration:none;}
+
+.box{ width:100%; margin:0 auto; }
+.bcon{    width: 281px;
+    height: 263px;
+    border: 7px solid #00b7ee;
+    position: absolute;
+    top: 374px;
+    left: 10%;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;}
+.bcon h1{ border-bottom:1px solid #eee; padding:0 10px;background: #00b7ee;}
+.bcon h1 b{ font:bold 14px/40px '宋体'; padding:0 20px; margin-top:-1px; display:inline-block;color: #fff;font-size: 30px;}
+
+.list_lh{ height:400px; overflow:hidden;background-color:white;}
+.list_lh li{ padding:10px;background: #e5e5e5;border-bottom:1px solid #fff;  }
+.list_lh li p{ height:24px; line-height:24px;margin-left:15px; }
+.list_lh li p a{ float:left;}
+.list_lh li p em{ width:80px; font:normal 12px/24px Arial; color:#FF3300; float:right; display:inline-block;}
+.list_lh li p span{ color:#999; float:right;}
+.list_lh li p a.btn_lh{ background:#28BD19; height:17px; line-height:17px; color:#fff; padding:0 5px; margin-top:4px; display:inline-block; float:right;}
+.btn_lh:hover{ color:#fff; text-decoration:none;}
+
+.btm p{ font:normal 12px/24px 'Microsoft YaHei'; text-align:center;}
+}
+
+
+
+#cover{
+    display: none;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+}
+#cover-bg{
+    width: 100%;
+    height: 100%;
+    background-color: #aaa;
+    opacity: 0.7;
+    -webkit-opacity: 0.7;
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#cover-content{
+    background-color: #00b7ee;
+    z-index: 8;
+    position: absolute;
+    top: 40%;
+    left: 20%;
+}
+#cover-content h1{
+	text-align: center;
+    color: #ff0707;
+    padding-bottom: 10px;
+}
+#cover-content input{
+	height: 30px;
+    width: 100%;
+}
+#cover-content button{
+	float: right;
+    margin-top: 20px;
+}
+#WinnerText{
+	text-align: center;
+    font-size: 19px;
+    color: #FFEB3B;
+    font-weight: 600;
+    padding-bottom: 10px;
+}

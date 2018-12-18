@@ -1,0 +1,312 @@
+<div id="ribbon">
+    <ol class="breadcrumb">
+        <li>
+            <span class="glyphicon glyphicon-home"></span>
+            首页
+        </li>
+        <li>商品管理</li>
+        <li class="active">商品列表</li>
+    </ol>
+</div>
+<div>
+    <ol class="breadcrumb" ng-if="ShowInfo">
+      <li><button class="btn btn-primary" data-toggle="modal" data-target="#AddObj" ng-click="addModal()">增加</button></li>
+      <li><button class="btn btn-primary" data-toggle="modal" data-target="#TempaddModal">选择模板增加</button></li>
+      <li>
+        <select id="Select_teamwork" ng-init="SelectValue = SelectValue || '0'" ng-model="SelectValue" ng-change="SelectChange()">
+          <option value="0" selected="selected">--请选择商品子类--</option>
+          <option value="{{Kind.goodsKindId}}" ng-repeat="Kind in Kinds track by $index">
+            {{Kind.name}}
+          </option>
+        </select>
+      </li>
+    </ol>
+    <ol class="breadcrumb">
+      <li>
+        <div class="input-group" style="width: 22%">
+          <div class="input-group-addon"><span class="fa fa-search" aria-hidden="true"></span></div>
+
+          <input class="form-control" ng-model="SearchGoodsName" placeholder="请输入商品名称，例如“康师傅”"/>
+
+          <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button" ng-click="SearchAllGoods(SearchGoodsName)">查询</button>
+                </span>
+        </div>
+      </li>
+    </ol>
+
+
+  <!-- 选择模板增加模态框-->
+  <div class="modal fade" id="TempaddModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            &times;
+          </button>
+          <div class="input-group" style="width: 60%">
+            <div class="input-group-addon"><span class="fa fa-search" aria-hidden="true"></span></div>
+
+            <input class="form-control" ng-model="SearchContent" placeholder="请输入商品名称，例如“康师傅冰红茶”、输入“康师傅”或者“冰红茶”" />
+
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="button" ng-click="SearchGoods(SearchContent)">查询</button>
+            </span>
+          </div>
+          <select id="Select_tmpkind" ng-init="SelectTmpValue = SelectTmpValue || '0'" ng-model="SelectTmpValue" ng-change="SelectChange()" style="margin-top: 15px;padding: 5px;">
+            <option value="0" selected="selected">--选择增加商品到哪个子类里--</option>
+            <option value="{{Kind.goodsKindId}}" ng-repeat="Kind in Kinds track by $index">
+              {{Kind.name}}
+            </option>
+          </select>
+        </div>
+         <div class="modal-body" style="background-color: #f1f1f1;">
+           <div class="row">
+             <div class="col-sm-3" ng-repeat="SearchGoodsList in SearchGoodsLists" style="background-color: white;box-shadow: 0 0 13px 0 #4c4c4c;margin-right: 10px;width: 23%;margin-top: 10px">
+               <div class="row">
+                 <div class="col-sm-4">
+                   <img ng-src={{SearchGoodsList.img}} style="width: 100%;">
+                 </div>
+                 <div class="col-sm-6">
+                   <div class="row">
+                     <div class="col-sm-12" style="word-wrap: break-word;word-break: normal;">
+                       <label>{{SearchGoodsList.name}}</label>
+                     </div>
+                   </div>
+                   <div class="row">
+                     <div class="col-sm-12" style="text-align: right;">
+                       ￥{{SearchGoodsList.newPrice}}
+                     </div>
+                   </div>
+                 </div>
+                 <div class="col-sm-2" style="text-align: center;line-height: 70px;">
+                   <input type="checkbox" ng-model="SearchGoodsList.isChecked" ng-click="IsChenkALl()">
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+        <div class="modal-footer">
+          <label style="float: left">
+            <input type="checkbox" ng-model="AllChecked" ng-click="ChenkAll()">全选
+          </label>
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            关闭
+          </button>
+          <button type="button" data-dismiss="modal" class="btn btn-primary" ng-click="AddTmpGoods(SelectTmpValue)">
+            确定
+          </button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+
+
+
+    <!-- 新增模态框-->
+    <div class="modal fade" id="AddObj" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="AddLabel">
+                        新增商品
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="pageFormContent" layouth="58">
+                        <div class="unit">
+                            <label>商品名称：</label>
+                            <input type="text" name="name" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="Goods.Name">
+                        </div>
+                        <div class="unit">
+                            <label>商品种类：</label>
+                                <select ng-model="Goods.GoodsKindId" ng-options='x.goodsKindId as x.name for x in KindInfos' required>
+                                    <option selected="" value="">请选择</option>
+                                </select>
+                        </div>
+                        <div class="unit">
+                            <label>价格：</label>
+                            <input type="text" name="NewPrice" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="Goods.NewPrice">
+                        </div>
+<!--                        <div class="unit">
+                            <label>原价：</label>
+                            <input type="text" name="OldPrice" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="Goods.OldPrice">
+                        </div>-->
+                        <div class="unit">
+                            <label>描述：</label>
+                            <input type="text" name="Notice" class="required alphanumericchinese textInput" size="33"  value="" ng-model="Goods.Notice">
+                        </div>
+                        <div class="unit">
+                            <label>商品图片：</label>
+                            <div class="PerPhoto_ImgStyle" ngf-select="uploadFiles($files)" accept="image/png,image/jpg,image/jpeg,imge/bmp,image/gif" ngf-max-size="2MB">
+                                <img ng-src={{Img}} height="200" width="180">
+                            </div>
+                        </div>
+                      <div class="unit">
+                        <label>详情图片：</label>
+                        <div class="PerPhoto_ImgStyle" ngf-select="uploadFiles1($files)" accept="image/png,image/jpg,image/jpeg,imge/bmp,image/gif" ngf-max-size="2MB">
+                          <img ng-src={{Img1}} height="200" width="180">
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="closeWareHouse()">
+                        关闭
+                    </button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="PostGoods(Goods)">
+                        确定
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+    <table class="table main-table table-hover table-bordered" style="margin: 5px">
+        <thead>
+            <tr>
+                <th class="text-center">商品名称</th>
+                <th class="text-center">现价</th>
+                <th class="text-center">原价</th>
+                <th class="text-center">描述</th>
+                <th class="text-center">图片</th>
+                <th class="text-center">详情图片</th>
+                <th class="text-center">状态</th>
+                <th class="text-center" ng-if="ShowInfo">操作</th>
+                <th class="text-center" ng-if="!ShowInfo">所属商家</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="GoodsInfo in GoodsInfos">
+                <td>{{GoodsInfo.name}}</td>
+                <td>{{GoodsInfo.newPrice}}</td>
+                <td>{{GoodsInfo.oldPrice}}</td>
+                <td>{{GoodsInfo.notice}}</td>
+                <td><img ng-src="{{GoodsInfo.img}}" height="100" width="80" /></td>
+                <td><img ng-src="{{GoodsInfo.comment2}}" height="100" width="80" /></td>
+                <td>{{GoodsInfo.comment1}}</td>
+                <td class="text-center"  ng-if="ShowInfo">
+                    <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ModifyObj" ng-click="EditGoods(GoodsInfo)" ng-show="EditGoods">编辑</a>
+                    <!--<a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#DelObj" ng-click="DeleteGoods(GoodsInfo.goodsId)" ng-show="DeleteGoods">删除</a>-->
+                </td>
+                <td ng-if="!ShowInfo">{{GoodsInfo.sysUserName}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- 删除模态框-->
+    <div class="modal fade" id="DelObj" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="DelLabel">
+                        确认删除该种类？
+                    </h4>
+                </div>
+                <!--    <div class="modal-body">
+                        确认删除？
+                    </div>-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button type="button" data-dismiss="modal" class="btn btn-primary" ng-click="ConfirmDelete()">
+                        确定
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <!--修改模态框-->
+    <div class="modal fade" id="ModifyObj" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="ModifyLabel">
+                        修改商品
+                    </h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="pageFormContent" layouth="58">
+                        <div class="unit">
+                            <label>商品名称：</label>
+                            <input type="text" name="username" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="KindE.name">
+                        </div>
+                    </div>
+                    <div class="pageFormContent" layouth="58">
+                      <div class="unit">
+                        <label>商品种类：</label>
+                        <select ng-model="KindE.goodsKindId" ng-options='x.goodsKindId as x.name for x in KindInfos' required>
+
+                        </select>
+                      </div>
+                    </div>
+                    <div class="pageFormContent" layouth="58">
+                        <div class="unit">
+                            <label>价格：</label>
+                            <input type="text" name="username" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="KindE.newPrice">
+                        </div>
+                    </div>
+<!--                    <div class="pageFormContent" layouth="58">
+                        <div class="unit">
+                            <label>原价：</label>
+                            <input type="text" name="username" class="required alphanumericchinese textInput" size="33" maxlength="20" value="" ng-model="KindE.oldPrice">
+                        </div>
+                    </div>-->
+                    <div class="pageFormContent" layouth="58">
+                        <div class="unit">
+                            <label>描述：</label>
+                            <input type="text" name="username" class="required alphanumericchinese textInput" size="33"  value="" ng-model="KindE.notice">
+                        </div>
+                    </div>
+                    <div class="pageFormContent" layouth="58">
+                      <div class="unit">
+                        <label>状态：</label>
+                        <input type="radio" name="optionsRadios" ng-model="KindE.comment1"  value="上架"> 上架
+                        <input type="radio" name="optionsRadios" ng-model="KindE.comment1"  value="下架"> 下架
+                      </div>
+                    </div>
+                    <div class="pageFormContent" layouth="58">
+                        <div class="unit">
+                            <label>商品图片：</label>
+                            <div class="PerPhoto_ImgStyle" ngf-select="uploadFiles($files)" accept="image/png,image/jpg,image/jpeg,imge/bmp,image/gif" ngf-max-size="2MB">
+                                <img ng-src={{Img}} height="200" width="180">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pageFormContent" layouth="58">
+                      <div class="unit">
+                        <label>商品图片：</label>
+                        <div class="PerPhoto_ImgStyle" ngf-select="uploadFiles1($files)" accept="image/png,image/jpg,image/jpeg,imge/bmp,image/gif" ngf-max-size="2MB">
+                          <img ng-src={{Img1}} height="200" width="180">
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button type="button" data-dismiss="modal" class="btn btn-primary" ng-click="Modify(KindE)">
+                        确定
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage"
+        max-size="maxSize" class="pagination pagination-sm" items-per-page="15" previous-text="上一页" next-text="下一页" first-text="首页" last-text="尾页"
+        ng-change="GetGoods()"></ul>
+
+</div>
+
+

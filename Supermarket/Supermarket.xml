@@ -1,0 +1,3372 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Supermarket</name>
+    </assembly>
+    <members>
+        <member name="T:Applet.Controllers.AddressController">
+            <summary>
+            Home控制器
+            </summary>
+        </member>
+        <member name="M:Applet.Controllers.AddressController.#ctor(Supermarket.Models.InitModels.SupermarketDbContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Applet.Controllers.AddressController.CreateAddr(Supermarket.Dto.AddressDto)">
+            <summary>
+            新增地址
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Applet.Controllers.AddressController.GetAddr(System.String)">
+            <summary>
+            查询地址
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Applet.Controllers.AddressController.GetDefaultAddr(System.String)">
+            <summary>
+            获取默认地址
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Applet.Controllers.AddressController.DelAddr(System.Int64)">
+            <summary>
+            删除地址
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Applet.Controllers.AddressController.Change(Supermarket.Dto.AddressDto)">
+            <summary>
+            设置默认
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="T:Applet.Controllers.LotteryController">
+            <summary>
+            奖品控制器
+            </summary>
+        </member>
+        <member name="M:Applet.Controllers.LotteryController.#ctor(Supermarket.Models.InitModels.SupermarketDbContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Applet.Controllers.LotteryController.GetLottery(Supermarket.Dto.PageDto)">
+            <summary>
+            获取奖品列表
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Applet.Controllers.LotteryController.CreateLottery(Supermarket.Dto.LotteryDto)">
+            <summary>
+            新增奖品
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Applet.Controllers.LotteryController.EditLottery(Supermarket.Dto.LotteryDto)">
+            <summary>
+            修改奖品
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Applet.Controllers.LotteryController.DelLottery(System.Int64)">
+            <summary>
+            删除奖品
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Applet.Controllers.LotteryController.TestRan(System.String)">
+            <summary>
+            测试随机数
+            </summary>
+            <returns>返回版本号</returns>
+        </member>
+        <member name="M:Applet.Controllers.LotteryController.GetOneLottery(System.Int64)">
+            <summary>
+            获取某一商家奖品
+            </summary>
+            <returns>返回版本号</returns>
+        </member>
+        <member name="T:Applet.Controllers.WinnerController">
+            <summary>
+            中奖控制器
+            </summary>
+        </member>
+        <member name="M:Applet.Controllers.WinnerController.#ctor(Supermarket.Models.InitModels.SupermarketDbContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Applet.Controllers.WinnerController.GetLottery(Supermarket.Dto.PageDto)">
+            <summary>
+            获取奖品列表
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Applet.Controllers.WinnerController.CreateWinner(Supermarket.Dto.WinnerDto)">
+            <summary>
+            新增中奖者
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Applet.Controllers.WinnerController.GetWinners">
+            <summary>
+            获取本期中奖名单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Supermarket.Controllers.AppCartController">
+            <summary>
+            商品详情控制器
+            </summary>
+        </member>
+        <member name="M:Supermarket.Controllers.AppCartController.#ctor(Supermarket.Models.InitModels.SupermarketDbContext)">
+            <summary>
+            数据库连接
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Supermarket.Controllers.AppCartController.GetCart(System.String)">
+            <summary>
+            获取当前登陆用户下的购物车
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.AppCartController.GetOrderDetail(System.String)">
+            <summary>
+            订单详情购物车获取选中的商品
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.AppCartController.GetOrderOneDetail(System.Int64)">
+            <summary>
+            订单详情购物车获取选中的商品
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.AppCartController.AddCart(Supermarket.Dto.AppCartDto)">
+            <summary>
+            添加购物车
+            </summary>
+            <param name="appCartDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Controllers.AppCartController.DelCart(System.Int64)">
+            <summary>
+            删除购物车
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Controllers.AppCartController.ModifyCart(Supermarket.Dto.AppCartDto)">
+            <summary>
+            修改购物车件数
+            </summary>
+            <param name="appCartDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Controllers.AppCartController.GetCartNum(Supermarket.Dto.AppCartDto)">
+            <summary>
+            获取当前登陆用户下的购物车物品数量
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.AppCartController.GetCartAllNum(Supermarket.Dto.AppCartDto)">
+            <summary>
+            获取当前登陆用户下的购物车物品数量
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.AppCartController.SelectAppCart(System.Int64)">
+            <summary>
+            单选择购物车
+            </summary>
+            <param name="CartId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Controllers.AppCartController.SelectAllAppCart(Supermarket.Dto.SelectAllDto)">
+            <summary>
+            单选择购物车
+            </summary>
+            <param name="selectAllDto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Supermarket.Controllers.GoodsBigKindController">
+            <summary>
+            商品大类控制器
+            </summary>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsBigKindController.#ctor(Supermarket.Models.InitModels.SupermarketDbContext,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            配置数据库与文件流参数
+            </summary>
+            <param name="context"></param>
+            <param name="env"></param>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsBigKindController.GetKind(Supermarket.Dto.PageDto)">
+            <summary>
+            获取当前登陆用户下的商品大类
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsBigKindController.GetUserBigKind(System.Int64)">
+            <summary>
+            小程序端获取当前登陆用户下的商品大类
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsBigKindController.PostKind(Supermarket.Dto.GoodsBigKindDto)">
+            <summary>
+            添加商品种类
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsBigKindController.EditGoodsKind(Supermarket.Dto.GoodsBigKindDto)">
+            <summary>
+            获取某一商品大类信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsBigKindController.ModifyKind(Supermarket.Dto.GoodsBigKindDto)">
+            <summary>
+            修改产品类型
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsBigKindController.DeleteGoodsKind(System.Int64)">
+            <summary>
+            删除产品大类
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="T:Supermarket.Controllers.GoodsController">
+            <summary>
+            商品详情控制器
+            </summary>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsController.#ctor(Supermarket.Models.InitModels.SupermarketDbContext)">
+            <summary>
+            数据库连接
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsController.GetKind(Supermarket.Dto.PageDto)">
+            <summary>
+            获取当前登陆用户下的商品种类
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsController.GetGoods(Supermarket.Dto.PageDto)">
+            <summary>
+            获取当前商品种类下的所有商品
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsController.PostGoods(Supermarket.Dto.GoodsDto)">
+            <summary>
+            新增商品
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsController.DeleteGoods(System.Int64)">
+            <summary>
+            删除产品小类
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsController.EditGoods(Supermarket.Dto.GoodsDto)">
+            <summary>
+            获取某一商品详情信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsController.Modify(Supermarket.Dto.GoodsDto)">
+            <summary>
+            修改产品信息
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsController.GetUserGoods(Supermarket.Dto.GoodsDto)">
+            <summary>
+            小程序端获取商品
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsController.Getdetail(System.Int64)">
+            <summary>
+            小程序端获取单一商品详情
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsController.SearchGoods(System.String)">
+            <summary>
+            模板过滤，取出模板商品别表
+            </summary>
+            <param name="Name">搜索框输入名字</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsController.PostGoodsTmp(System.Collections.Generic.List{Supermarket.Dto.GoodsDto})">
+            <summary>
+            新增产品(通过模板)
+            </summary>
+            <param name="goodsDtos">模板商品列表</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsController.SearchAllGoods(Supermarket.Dto.PageDto)">
+            <summary>
+            搜索所有商品
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsController.AppSearchGoods(Supermarket.Dto.AppSearchGoodDto)">
+            <summary>
+            小程序搜索商品
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsController.WeGetAllGoods(System.Int64)">
+            <summary>
+            小程序获取当前用户全部商品
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="T:Supermarket.Controllers.GoodsKindController">
+            <summary>
+            商品种类控制器
+            </summary>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsKindController.#ctor(Supermarket.Models.InitModels.SupermarketDbContext,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            配置数据库与文件流参数
+            </summary>
+            <param name="context"></param>
+            <param name="env"></param>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsKindController.GetBigKind(System.Int64)">
+            <summary>
+            获取当前登陆用户下的商品大类
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsKindController.GetKind(Supermarket.Dto.PageDto)">
+            <summary>
+            获取当前登陆用户下的商品子类
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsKindController.GetUserKind(System.Int64,System.Int64)">
+            <summary>
+            小程序端获取当前登陆用户下的商品种类
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsKindController.PostKind(Supermarket.Dto.GoodsKindDto)">
+            <summary>
+            添加商品小类
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsKindController.EditGoodsKind(Supermarket.Dto.GoodsKindDto)">
+            <summary>
+            获取某一商品种类信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsKindController.ModifyKind(Supermarket.Dto.GoodsKindDto)">
+            <summary>
+            修改产品类型
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.GoodsKindController.DeleteGoodsKind(System.Int64)">
+            <summary>
+            删除产品大类
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="T:Supermarket.Controllers.LoginController">
+            <summary>
+            Home控制器
+            </summary>
+        </member>
+        <member name="M:Supermarket.Controllers.LoginController.#ctor(Supermarket.Models.InitModels.SupermarketDbContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Supermarket.Controllers.LoginController.Login(Supermarket.Dto.SysUserDto)">
+            <summary>
+            登录
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.LoginController.AppLogin(Supermarket.Dto.SysUserDto)">
+            <summary>
+            APP商家登录
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="T:Supermarket.Controllers.OrderController">
+            <summary>
+            相片控制器
+            </summary>
+        </member>
+        <member name="M:Supermarket.Controllers.OrderController.#ctor(Supermarket.Models.InitModels.SupermarketDbContext,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="hostingEnvironment"></param>
+        </member>
+        <member name="M:Supermarket.Controllers.OrderController.PostImg">
+            <summary>
+            上传文件
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.OrderController.CreateOrder(Supermarket.Dto.OrderDto)">
+            <summary>
+            新增订单
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.OrderController.GetAllOrder(Supermarket.Dto.PageDto)">
+            <summary>
+            获取当前用户下的订单
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.OrderController.ModifyOrder(Supermarket.Dto.OrderDto)">
+            <summary>
+            修改用户订单状态
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.OrderController.GetRange(Supermarket.Dto.OrderDto)">
+            <summary>
+            获取配送范围是否可送
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.OrderController.GetPrice(Supermarket.Dto.OrderDto)">
+            <summary>
+            是否达到起送价
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.OrderController.GetOrder(System.String)">
+            <summary>
+            查询本人订单
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.OrderController.GetOrderDetail(System.Int64)">
+            <summary>
+            查询订单详情
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.OrderController.OrderReceiving(Supermarket.Dto.OrderDto)">
+            <summary>
+            接单
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.OrderController.GetAppOrder(Supermarket.Dto.PageDto)">
+            <summary>
+            查询当前商户订单
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.OrderController.ModifyAppOrder(System.Int64)">
+            <summary>
+            修改App订单状态
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.OrderController.ModifyApp(System.Int64)">
+            <summary>
+            修改App订单状态
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.OrderController.Modify(System.Int64)">
+            <summary>
+            修改App订单状态
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.OrderController.CreateOnlineOrder(Supermarket.Dto.OrderDto)">
+            <summary>
+            新增在线支付订单
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="T:Supermarket.Controllers.SysUserController">
+            <summary>
+            Home控制器
+            </summary>
+        </member>
+        <member name="M:Supermarket.Controllers.SysUserController.#ctor(Supermarket.Models.InitModels.SupermarketDbContext)">
+            <summary>
+            数据库链接库
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Supermarket.Controllers.SysUserController.GetSysUsers(Supermarket.Dto.PageDto)">
+            <summary>
+            获取系统用户列表
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.SysUserController.AddSysUser(Supermarket.Dto.SysUserDto)">
+            <summary>
+            添加系统用户
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.SysUserController.EditSysUser(Supermarket.Dto.SysUserDto)">
+            <summary>
+            修改系统用户
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.SysUserController.DelSysUser(System.Int64)">
+            <summary>
+            删除系统用户
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.SysUserController.InitPwd(System.Int64)">
+            <summary>
+            初始化商家密码
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.SysUserController.GetSysUserInfo(System.Int64)">
+            <summary>
+            获取某一商家信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Controllers.SysUserController.ChangePwd(Supermarket.Dto.PwdDto)">
+            <summary>
+            商家修改密码
+            </summary>
+            <param name="pwdDto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Supermarket.Controllers.UserController">
+            <summary>
+            Home控制器
+            </summary>
+        </member>
+        <member name="M:Supermarket.Controllers.UserController.#ctor(Supermarket.Models.InitModels.SupermarketDbContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Supermarket.Controllers.UserController.CreateUser(Supermarket.Dto.UserDto)">
+            <summary>
+            新增用户
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.UserController.HttpPost(System.String,System.String)">
+            <summary>
+            发送code 解析openid
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Controllers.UserController.NewHttpPost(System.String,System.String,System.String,System.String)">
+            <summary>
+            发送code 解析openid
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Controllers.UserController.GetUser(Supermarket.Dto.PageDto)">
+            <summary>
+            获取用户
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:Supermarket.Controllers.UserController.SendSms(System.String,System.String)">
+            <summary>
+            发送短信测试
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Controllers.UserController.HttpTemplate(System.String,Supermarket.Dto.TemDto)">
+            <summary>
+            发送模板消息小程序
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Controllers.UserController.HttpText(System.String,Supermarket.Dto.TemDto)">
+            <summary>
+            发送模板消息微信公众号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Controllers.UserController.GetToken">
+            <summary>
+            获取token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Controllers.UserController.TempleHttp(System.String,Supermarket.Dto.TemDto)">
+            <summary>
+            发送公众号模板消息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Controllers.UserController.SaveForm(Supermarket.Dto.FormIdDto)">
+            <summary>
+            存储FormID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Supermarket.Data.DbInitializer">
+            <summary>
+            数据库初始化
+            </summary>
+        </member>
+        <member name="M:Supermarket.Data.DbInitializer.#ctor(Supermarket.Models.InitModels.SupermarketDbContext)">
+            <summary>
+            初始化方法
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Supermarket.Data.DbInitializer.InitializeDataAsync">
+            <summary>
+            异步调用初始化数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Data.DbInitializer.SeedDate">
+            <summary>
+            异步建立数据值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Supermarket.Dto.AddressDto">
+            <summary>
+            用户数据传输对象
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AddressDto.Addr">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AddressDto.ContactName">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AddressDto.ContactPhone">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AddressDto.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AddressDto.UpDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AddressDto.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AddressDto.OpenId">
+            <summary>
+            第三方唯一标识
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AddressDto.IsDefault">
+            <summary>
+            是否默认
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AddressDto.Longitude">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AddressDto.Latitude">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="T:Supermarket.Dto.AppCartDto">
+            <summary>
+            地址管理表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AppCartDto.Id">
+            <summary>
+            地址id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AppCartDto.Num">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AppCartDto.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AppCartDto.UpDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AppCartDto.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AppCartDto.GoodsId">
+            <summary>
+            商品Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AppCartDto.Name">
+            <summary>
+            商品名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AppCartDto.Img">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AppCartDto.Notice">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AppCartDto.NewPrice">
+            <summary>
+            现价
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AppCartDto.OldPrice">
+            <summary>
+            原价
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AppCartDto.GoodsKindId">
+            <summary>
+            商品种类Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AppCartDto.OpenId">
+            <summary>
+            第三方唯一Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AppCartDto.Seclect">
+            <summary>
+            是否选中
+            </summary>
+        </member>
+        <member name="T:Supermarket.Dto.SelectAllDto">
+            <summary>
+            购物车全选dto
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SelectAllDto.OpenId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SelectAllDto.Select">
+            <summary>
+            全选按钮标志位
+            </summary>
+        </member>
+        <member name="T:Supermarket.Dto.FormIdDto">
+            <summary>
+            FormId 视图模型
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.FormIdDto.Id">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.FormIdDto.FormIds">
+            <summary>
+            传入ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.FormIdDto.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.FormIdDto.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.FormIdDto.Comment1">
+            <summary>
+            备用1
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.FormIdDto.Comment2">
+            <summary>
+            备用2
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.FormIdDto.Comment3">
+            <summary>
+            备用3
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.FormIdDto.OpenId">
+            <summary>
+            用户唯一标识
+            </summary>
+        </member>
+        <member name="T:Supermarket.Dto.GoodsBigKindDto">
+            <summary>
+            商品大类视图模型
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsBigKindDto.GoodsBigKindId">
+            <summary>
+            商品大类id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsBigKindDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsBigKindDto.Index">
+            <summary>
+            排序值
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsBigKindDto.Img">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsBigKindDto.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsBigKindDto.UpDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsBigKindDto.SysUserId">
+            <summary>
+            系统用户Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsBigKindDto.SysUserName">
+            <summary>
+            系统用户名称
+            </summary>
+        </member>
+        <member name="T:Supermarket.Dto.GoodsDto">
+            <summary>
+            商品种类视图模型
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsDto.GoodsId">
+            <summary>  
+            商品id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsDto.Num">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsDto.Img">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsDto.Notice">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsDto.NewPrice">
+            <summary>
+            现价
+            </summary> 
+        </member>
+        <member name="P:Supermarket.Dto.GoodsDto.OldPrice">
+            <summary>
+            原价
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsDto.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsDto.UpDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsDto.GoodsKindId">
+            <summary>
+            商品种类Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsDto.GoodsBigKindId">
+            <summary>
+            商品大类id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsDto.SysUserId">
+            <summary>
+            系统用户Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsDto.IsChecked">
+            <summary>
+            是否选中
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsDto.Comment1">
+            <summary>
+            上架/下架
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsDto.Comment2">
+            <summary>
+            商品描述图片
+            </summary>
+        </member>
+        <member name="T:Supermarket.Dto.AppSearchGoodDto">
+            <summary>
+            微信小程序搜索商品dto
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AppSearchGoodDto.SysUserId">
+            <summary>
+            商家id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.AppSearchGoodDto.KeyWords">
+            <summary>
+            商品关键字
+            </summary>
+        </member>
+        <member name="T:Supermarket.Dto.GoodsKindDto">
+            <summary>
+            商品种类视图模型
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsKindDto.GoodsKindId">
+            <summary>
+            商品种类id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsKindDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsKindDto.Index">
+            <summary>
+            排序值
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsKindDto.Img">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsKindDto.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsKindDto.UpDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsKindDto.SysUserId">
+            <summary>
+            系统用户Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsKindDto.SysUserName">
+            <summary>
+            系统用户名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GoodsKindDto.GoodsBigKindId">
+            <summary>
+             商品大类id
+            </summary>
+        </member>
+        <member name="T:Supermarket.Dto.LotteryDto">
+            <summary>
+            奖品数据传输对象
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.LotteryDto.Id">
+            <summary>
+            奖品id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.LotteryDto.Name">
+            <summary>
+            奖品名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.LotteryDto.Probability">
+            <summary>
+            中奖概率
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.LotteryDto.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.LotteryDto.EditDate">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.LotteryDto.Comment1">
+            <summary>
+            备用1
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.LotteryDto.Comment2">
+            <summary>
+            备用2
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.LotteryDto.Comment3">
+            <summary>
+            备用3
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.LotteryDto.SysUserId">
+            <summary>
+            所属商家id
+            </summary>
+        </member>
+        <member name="T:Supermarket.Dto.OrderDto">
+            <summary>
+            用户数据传输对象
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.OrderId">
+            <summary>
+            订单id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.OrderNo">
+            <summary>
+            订单编号
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.Name">
+            <summary>
+            订单名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.Price">
+            <summary>
+            总额
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.Comments">
+            <summary>
+            注释
+            </summary> 
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.PayType">
+            <summary>
+            支付方式
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.PayTypestr">
+            <summary>
+            支付方式str
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.PayState">
+            <summary>
+            交易状态
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.CreatDatestr">
+            <summary>
+            创建时间str
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.UserName">
+            <summary>
+            用户昵称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.AddressId">
+            <summary>
+            地址ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.SysUserId">
+            <summary>
+            系统用户Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.SysUserName">
+            <summary>
+            系统用户名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.OpenId">
+            <summary>
+            第三方登陆ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.Addr">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.ContactName">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.ContactPhone">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.GoodsId">
+            <summary>
+            id数组
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.FormId">
+            <summary>
+            表单ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.OrderDto.ordertype">
+            <summary>
+            判断传输类型
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GodDto.GodName">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GodDto.GodImg">
+             <summary>
+            产品图片
+             </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GodDto.NewPrice">
+            <summary>
+            现价
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GodDto.Num">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="T:Supermarket.Dto.GetPageDto`1">
+            <summary>
+            分页器视图模型
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GetPageDto`1.BigField">
+            <summary>
+            大字段列表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.GetPageDto`1.TotalCount">
+            <summary>
+            列表总数
+            </summary>
+        </member>
+        <member name="T:Supermarket.Dto.PageDto">
+            <summary>
+            分页获取视图模型
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.PageDto.Page">
+            <summary>
+            页数
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.PageDto.Number">
+            <summary>
+            当前条数
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.PageDto.Cid">
+            <summary>
+            传入系统用户ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.PageDto.GoodsKindId">
+            <summary>
+            子类ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.PageDto.GoodsBigKindId">
+            <summary>
+            大类ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.PageDto.SearchName">
+            <summary>
+            搜索名称
+            </summary>
+        </member>
+        <member name="T:Supermarket.Dto.ParasDto">
+            <summary>
+            用户数据传输对象
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.ParasDto.Id">
+            <summary>
+            参数ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.ParasDto.Name">
+            <summary>
+            参数名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.ParasDto.Describe">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.ParasDto.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.ParasDto.UpDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.ParasDto.Comment1">
+            <summary>
+            备用1
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.ParasDto.Comment2">
+            <summary>
+            备用2
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.ParasDto.Comment3">
+            <summary>
+            备用3
+            </summary>
+        </member>
+        <member name="T:Supermarket.Dto.PwdDto">
+            <summary>
+            商家密码管理
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.PwdDto.SysUserId">
+            <summary>
+            商家id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.PwdDto.Pwd">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.PwdDto.NewPwd">
+            <summary>
+            新密码
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.PwdDto.SurePwd">
+            <summary>
+            确认新密码
+            </summary>
+        </member>
+        <member name="T:Supermarket.Dto.SysUserDto">
+            <summary>
+            商家数据传输对象
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.SysUserId">
+            <summary>
+            商家id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.Name">
+            <summary>
+            商家名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.Account">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.Pwd">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.Token">
+            <summary>
+            令牌
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.Salt">
+            <summary>
+            盐
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.Phone">
+            <summary>
+            商家电话
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.Addr">
+            <summary>
+            商家地址
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.Comments">
+            <summary>
+            注释
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.Ip">
+            <summary>
+            登录Ip
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.Code">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.Latitude">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.Longitude">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.Popenid">
+            <summary>
+            公共号用户ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.Comment1">
+            <summary>
+            配送范围
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.Price">
+            <summary>
+            起送金额
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.TemIdOrder">
+            <summary>
+            模板Id订单
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.TemIdSend">
+            <summary>
+            模板Id发货
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.TemIdAccept">
+            <summary>
+            模板Id接单
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.TemIdRefuse">
+            <summary>
+            模板Id拒绝
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.SysUserDto.IsOpen">
+            <summary>
+            是否开业
+            </summary>
+        </member>
+        <member name="T:Supermarket.Dto.TemDto">
+            <summary>
+            小程序模板
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.TemDto.touser">
+            <summary>
+            接收用户OpID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.TemDto.template_id">
+            <summary>
+            模板ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.TemDto.form_id">
+            <summary>
+            表单提交ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.TemDto.data">
+            <summary>
+            商品类型
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.Data1.first">
+            <summary>
+            关键字1
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.Data1.keyword1">
+            <summary>
+            关键字1
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.Data1.keyword2">
+            <summary>
+            关键字2
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.Data1.keyword3">
+            <summary>
+            关键字3
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.Data1.keyword4">
+            <summary>
+            关键字3
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.Data1.keyword5">
+            <summary>
+            关键字3
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.Data1.keyword6">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.Data1.remark">
+            <summary>
+            关键字1
+            </summary>
+        </member>
+        <member name="T:Supermarket.Dto.Keyword">
+            <summary>
+            关键字类型
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.Keyword.value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.Keyword.color">
+            <summary>
+            颜色
+            </summary>
+        </member>
+        <member name="T:Supermarket.Dto.UserDto">
+            <summary>
+            用户数据传输对象
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.UserDto.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.UserDto.Name">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.UserDto.Avatar">
+            <summary>
+            用户头像
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.UserDto.OpenId">
+            <summary>
+            第三方唯一id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.UserDto.Ip">
+            <summary>
+            登录ip
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.UserDto.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.UserDto.UpDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="T:Supermarket.Dto.WinnerDto">
+            <summary>
+            中奖者数据传输对象
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.WinnerDto.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.WinnerDto.OpenId">
+            <summary>
+            第三方唯一标识Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.WinnerDto.Name">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.WinnerDto.Avatar">
+            <summary>
+            用户头像
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.WinnerDto.Ip">
+            <summary>
+            登录ip
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.WinnerDto.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.WinnerDto.WinDate">
+            <summary>
+            中奖日期
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.WinnerDto.LotteryId">
+            <summary>
+            奖品id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.WinnerDto.LotteryName">
+            <summary>
+            奖品id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.WinnerDto.SysUserId">
+            <summary>
+            所属商家
+            </summary>
+        </member>
+        <member name="P:Supermarket.Dto.WinnerDto.Phone">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.GetDeviceInfoAsync(System.String)">
+            <summary>
+            <see cref="M:Supermarket.JPush.DeviceClient.GetDeviceInfo(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.GetDeviceInfo(System.String)">
+            <summary>
+            查询指定设备信息。
+            <see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_v3_device/#_1"/>
+            </summary>
+            <param name="registrationId">
+                客户端初始化 JPush 成功后，JPush 服务端会分配一个 Registration ID，作为此设备的标识（同一个手机不同 APP 的 Registration ID 是不同的）。
+            </param>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.UpdateDeviceInfoAsync(System.String,Jiguang.JPush.Model.DevicePayload)">
+            <summary>
+            <see cref="M:Supermarket.JPush.DeviceClient.UpdateDeviceInfo(System.String,Jiguang.JPush.Model.DevicePayload)"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.UpdateDeviceInfo(System.String,Jiguang.JPush.Model.DevicePayload)">
+            <summary>
+            更新设备信息（目前支持 tag, alias 和 mobile）。
+            <see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_v3_device/#_2"/>
+            </summary>
+            <param name="registrationId">
+                客户端初始化 JPush 成功后，JPush 服务端会分配一个 Registration ID，作为此设备的标识（同一个手机不同 APP 的 Registration ID 是不同的）。
+            </param>
+            <param name="devicePayload">设备信息对象</param>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.GetDevicesByAliasAsync(System.String,System.String)">
+            <summary>
+            <see cref="M:Supermarket.JPush.DeviceClient.GetDeviceInfo(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.GetDeviceByAlias(System.String,System.String)">
+            <summary>
+            获取指定 alias 下的设备，最多输出 10 个。
+            <see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_v3_device/#_3"/>
+            </summary>
+            <param name="alias">要查询的别名（alias）</param>
+            <param name="platform">"android" 或 "ios", 为 null 则默认为所有平台。</param>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.DeleteAliasAsync(System.String,System.String)">
+            <summary>
+            <see cref="M:Supermarket.JPush.DeviceClient.DeleteAlias(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.DeleteAlias(System.String,System.String)">
+            <summary>
+            删除一个别名，以及该别名与设备的绑定关系。
+            <see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_v3_device/#_4"/>
+            </summary>
+            <param name="alias">待删除的别名（alias）</param>
+            <param name="platform">"android" 或 "ios"，为 null 则默认为所有平台。</param>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.GetTagsAsync">
+            <summary>
+            <see cref="M:Supermarket.JPush.DeviceClient.GetTags"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.GetTags">
+            <summary>
+            获取当前应用的所有标签列表，每个平台最多返回 100 个。
+            <see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_v3_device/#_5"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.IsDeviceInTagAsync(System.String,System.String)">
+            <summary>
+            <see cref="M:Supermarket.JPush.DeviceClient.IsDeviceInTag(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.IsDeviceInTag(System.String,System.String)">
+            <summary>
+            查询某个设备是否在某个 tag 下。
+            <see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_v3_device/#_5"/>
+            </summary>
+            <param name="registrationId">设备的 registration id</param>
+            <param name="tag">要查询的 tag</param>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.AddDevicesToTagAsync(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            <see cref="M:Supermarket.JPush.DeviceClient.AddDevicesToTag(System.String,System.Collections.Generic.List{System.String})"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.AddDevicesToTag(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            为一个标签（tag）添加设备，一次最多支持 1000 个。
+            <see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_v3_device/#_7"/>
+            </summary>
+            <param name="tag">待操作的标签（tag）</param>
+            <param name="registrationIdList">设备的 registration id 列表</param>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.RemoveDevicesFromTagAsync(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            <see cref="M:Supermarket.JPush.DeviceClient.RemoveDevicesFromTag(System.String,System.Collections.Generic.List{System.String})"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.RemoveDevicesFromTag(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            为一个标签移除设备。
+            <see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_v3_device/#_7"/>
+            </summary>
+            <param name="tag">待操作的标签（tag）</param>
+            <param name="registrationIdList">设备的 registration id 列表</param>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.DeleteTagAsync(System.String,System.String)">
+            <summary>
+            <see cref="M:Supermarket.JPush.DeviceClient.DeleteTag(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.DeleteTag(System.String,System.String)">
+            <summary>
+            删除标签，以及标签与其下设备的关联关系。
+            <see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_v3_device/#_8"/>
+            </summary>
+            <param name="tag">待删除标签</param>
+            <param name="platform">"android" 或 "ios"，如果为 null，则默认为所有平台</param>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.GetUserOnlineStatusAsync(System.Collections.Generic.List{System.String})">
+            <summary>
+            <see cref="M:Supermarket.JPush.DeviceClient.GetUserOnlineStatus(System.Collections.Generic.List{System.String})"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.DeviceClient.GetUserOnlineStatus(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取用户在线状态（VIP only）。
+            <see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_v3_device/#vip"/>
+            </summary>
+            <param name="registrationIdList">待查询用户设备的 registration id，每次最多支持 1000 个。</param>
+        </member>
+        <member name="M:Supermarket.JPush.JPushClient.SendPushAsync(Jiguang.JPush.Model.PushPayload)">
+            <summary>
+            <see cref="M:Supermarket.JPush.JPushClient.SendPush(Jiguang.JPush.Model.PushPayload)"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.JPushClient.SendPush(Jiguang.JPush.Model.PushPayload)">
+            <summary>
+            进行消息推送。
+            <see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_v3_push/#_1"/>
+            </summary>
+            <param name="pushPayload"> 推送对象。<see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_v3_push/#_7"/> </param>
+        </member>
+        <member name="M:Supermarket.JPush.JPushClient.IsPushValidAsync(Jiguang.JPush.Model.PushPayload)">
+            <summary>
+            <see cref="M:Supermarket.JPush.JPushClient.IsPushValid(Jiguang.JPush.Model.PushPayload)"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.JPushClient.IsPushValid(Jiguang.JPush.Model.PushPayload)">
+            <summary>
+            校验推送能否成功。与推送 API 的区别在于：不会实际向用户发送任何消息。 其他字段说明和推送 API 完全相同。
+            </summary>
+            <param name="pushPayload"> 推送对象。<see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_v3_push/#_7"/> </param>
+        </member>
+        <member name="M:Supermarket.JPush.JPushClient.GetCIdListAsync(System.Nullable{System.Int32},System.String)">
+            <summary>
+            <see cref="M:Supermarket.JPush.JPushClient.GetCIdList(System.Nullable{System.Int32},System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.JPushClient.GetCIdList(System.Nullable{System.Int32},System.String)">
+            <summary>
+            获取 CId（推送的唯一标识符） 列表。
+            <see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_v3_push/#cid"/>
+            </summary>
+            <param name="count">不传默认为 1。范围为[1, 1000]</param>
+            <param name="type">CId 的类型。取值："push" (默认) 或 "schedule"</param>
+        </member>
+        <member name="M:Supermarket.JPush.ReportClient.GetMessageReportAsync(System.Collections.Generic.List{System.String})">
+            <summary>
+            <see cref="M:Supermarket.JPush.ReportClient.GetMessageReport(System.Collections.Generic.List{System.String})"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.ReportClient.GetMessageReport(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取指定 msg_id 的消息送达统计数据。
+            </summary>
+            <param name="msgIdList">消息的 msg_id 列表，每次最多支持 100 个。</param>
+        </member>
+        <member name="M:Supermarket.JPush.ReportClient.GetMessageDetailReportAsync(System.Collections.Generic.List{System.String})">
+            <summary>
+            <see cref="M:Supermarket.JPush.ReportClient.GetMessageDetailReport(System.Collections.Generic.List{System.String})"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.ReportClient.GetMessageDetailReport(System.Collections.Generic.List{System.String})">
+            <summary>
+            提供包括点击数等更详细的统计数据（VIP only）。
+            </summary>
+            <param name="msgIdList">消息的 msg_id 列表，每次最多支持 100 个。</param>
+        </member>
+        <member name="M:Supermarket.JPush.ReportClient.GetUserReportAsync(System.String,System.String,System.Int32)">
+            <summary>
+            <see cref="M:Supermarket.JPush.ReportClient.GetUserReport(System.String,System.String,System.Int32)"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.ReportClient.GetUserReport(System.String,System.String,System.Int32)">
+            <summary>
+            提供近2个月内某时间段的用户相关统计数据：新增用户、在线用户、活跃用户（VIP only）。
+            <see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_v3_report/#vip_1"/>
+            </summary>
+            <param name="timeUnit">时间单位。支持 "HOUR", "DAY" 或 "MOUNTH"</param>
+            <param name="startTime">
+                起始时间。
+                <para>如果单位是小时，则起始时间是小时（包含天），格式例：2014-06-11 09</para>
+                <para>如果单位是天，则起始时间是日期（天），格式例：2014-06-11</para>
+                <para>如果单位是月，则起始时间是日期（月），格式例：2014-06</para>
+            </param>
+            <param name="duration">
+                持续时长。
+                <para>如果时间单位（timeUnit）是天，则是持续的天数，其他时间单位以此类推。</para>
+                <para>只支持查询 60 天以内的用户信息。如果 timeUnit 为 HOUR，则只会输出当天的统计结果。</para>
+            </param>
+        </member>
+        <member name="M:Supermarket.JPush.ScheduleClient.CreateScheduleTaskAsync(System.String)">
+            <summary>
+            创建定时任务。
+            </summary>
+            <param name="json">
+                自己构造的请求 json 字符串。
+                <see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_push_schedule/#schedule"/>
+            </param>
+        </member>
+        <member name="M:Supermarket.JPush.ScheduleClient.CreateSingleScheduleTaskAsync(System.String,Jiguang.JPush.Model.PushPayload,System.String)">
+            <summary>
+            <see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_push_schedule/#_4"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.ScheduleClient.CreateSingleScheduleTask(System.String,Jiguang.JPush.Model.PushPayload,System.String)">
+            <summary>
+            创建单次定时任务。
+            </summary>
+            <param name="name">表示 schedule 任务的名字，由 schedule-api 在用户成功创建 schedule 任务后返回，不得超过 255 字节，由汉字、字母、数字、下划线组成。</param>
+            <param name="pushPayload">推送对象</param>
+            <param name="trigger">触发器</param>
+        </member>
+        <member name="M:Supermarket.JPush.ScheduleClient.CreatePeriodicalScheduleTaskAsync(System.String,Jiguang.JPush.Model.PushPayload,Jiguang.JPush.Model.Trigger)">
+            <summary>
+            <see cref="M:Supermarket.JPush.ScheduleClient.CreatePeriodicalScheduleTask(System.String,Jiguang.JPush.Model.PushPayload,Jiguang.JPush.Model.Trigger)"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.ScheduleClient.CreatePeriodicalScheduleTask(System.String,Jiguang.JPush.Model.PushPayload,Jiguang.JPush.Model.Trigger)">
+            <summary>
+            创建会在一段时间内重复执行的定期任务。
+            <see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_push_schedule/#_4"/>
+            </summary>
+            <param name="name">表示 schedule 任务的名字，由 schedule-api 在用户成功创建 schedule 任务后返回，不得超过 255 字节，由汉字、字母、数字、下划线组成。</param>
+            <param name="pushPayload">推送对象</param>
+            <param name="trigger">触发器</param>
+        </member>
+        <member name="M:Supermarket.JPush.ScheduleClient.GetValidScheduleTasksAsync(System.Int32)">
+            <summary>
+            <see cref="M:Supermarket.JPush.ScheduleClient.GetValidScheduleTasks(System.Int32)"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.ScheduleClient.GetValidScheduleTasks(System.Int32)">
+            <summary>
+            获取有效的定时任务列表。
+            </summary>
+            <param name="page">
+                <para>返回当前请求页的详细的 schedule-task 列表，如未指定 page 则 page 为 1。</para>
+                <para>排序规则：创建时间，由 schedule-service 完成。</para>
+                <para>如果请求页数大于总页数，则 page 为请求值，schedules 为空。</para>
+                <para>每页最多返回 50 个 task，如请求页实际的 task 的个数小于 50，则返回实际数量的 task。</para>
+            </param>
+        </member>
+        <member name="M:Supermarket.JPush.ScheduleClient.GetScheduleTaskAsync(System.String)">
+            <summary>
+            <see cref="M:Supermarket.JPush.ScheduleClient.GetScheduleTask(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.ScheduleClient.GetScheduleTask(System.String)">
+            <summary>
+            获取指定的定时任务。
+            </summary>
+            <param name="scheduleId">定时任务 ID。在创建定时任务时会返回。</param>
+        </member>
+        <member name="M:Supermarket.JPush.ScheduleClient.UpdateSingleScheduleTaskAsync(System.String,System.String,System.Nullable{System.Boolean},System.String,Jiguang.JPush.Model.PushPayload)">
+            <summary>
+            <see cref="M:Supermarket.JPush.ScheduleClient.UpdateSingleScheduleTask(System.String,System.String,System.Nullable{System.Boolean},System.String,Jiguang.JPush.Model.PushPayload)"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.ScheduleClient.UpdateSingleScheduleTask(System.String,System.String,System.Nullable{System.Boolean},System.String,Jiguang.JPush.Model.PushPayload)">
+            <summary>
+            更新单次定时任务。
+            </summary>
+            <param name="scheduleId">任务 ID</param>
+            <param name="name">任务名称，为 null 表示不更新。</param>
+            <param name="enabled">是否可用，为 null 表示不更新。</param>
+            <param name="triggeringTime">触发时间，类似 "2017-08-03 12:00:00"，为 null 表示不更新。</param>
+            <param name="pushPayload">推送内容，为 null 表示不更新。</param>
+        </member>
+        <member name="M:Supermarket.JPush.ScheduleClient.UpdatePeriodicalScheduleTaskAsync(System.String,System.String,System.Nullable{System.Boolean},Jiguang.JPush.Model.Trigger,Jiguang.JPush.Model.PushPayload)">
+            <summary>
+            <see cref="M:Supermarket.JPush.ScheduleClient.UpdatePeriodicalScheduleTask(System.String,System.String,System.Nullable{System.Boolean},Jiguang.JPush.Model.Trigger,Jiguang.JPush.Model.PushPayload)"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.ScheduleClient.UpdatePeriodicalScheduleTask(System.String,System.String,System.Nullable{System.Boolean},Jiguang.JPush.Model.Trigger,Jiguang.JPush.Model.PushPayload)">
+            <summary>
+            更新会重复执行的定时任务。
+            <see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_push_schedule/#schedule_2"/>
+            </summary>
+            <param name="scheduleId">任务 ID</param>
+            <param name="name">任务名称，为 null 表示不更新。</param>
+            <param name="enabled">是否可用，为 null 表示不更新。</param>
+            <param name="trigger">触发器对象，为 null 表示不更新。</param>
+            <param name="pushPayload">推送内容，为 null 表示不更新。</param>
+        </member>
+        <member name="M:Supermarket.JPush.ScheduleClient.DeleteScheduleTaskAsync(System.String)">
+            <summary>
+            <see cref="M:Supermarket.JPush.ScheduleClient.DeleteScheduleTask(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Supermarket.JPush.ScheduleClient.DeleteScheduleTask(System.String)">
+            <summary>
+            删除指定的定时任务。
+            <see cref="!:https://docs.jiguang.cn/jpush/server/push/rest_api_push_schedule/#schedule_3"/>
+            </summary>
+            <param name="scheduleId">已创建的 schedule 任务的 id。如果 scheduleId 不合法，即不是有效的 uuid，则返回 404。</param>
+        </member>
+        <member name="T:Supermarket.Models.Address">
+            <summary>
+            地址管理表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Address.AddressId">
+            <summary>
+            地址id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Address.IsDefault">
+            <summary>
+            是否默认
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Address.Addr">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Address.ContactName">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Address.ContactPhone">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Address.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Address.UpDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Address.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Address.Longitude">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Address.Latitude">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Address.Comment1">
+            <summary>
+            备用1
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Address.Comment2">
+            <summary>
+            备用2
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Address.Comment3">
+            <summary>
+            备用3
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Address.Users">
+            <summary>
+            外键关联
+            </summary>
+        </member>
+        <member name="T:Supermarket.Models.AppCart">
+            <summary>
+            手机购物车
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.AppCart.Id">
+            <summary>
+            购物车ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.AppCart.Num">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.AppCart.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.AppCart.UpDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.AppCart.Seclect">
+            <summary>
+            是否选中
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.AppCart.Comment2">
+            <summary>
+            备用2
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.AppCart.Comment3">
+            <summary>
+            备用3
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.AppCart.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.AppCart.Users">
+            <summary>
+            外键关联
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.AppCart.GoodsId">
+            <summary>
+            商品Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.AppCart.Goods">
+            <summary>
+            商品列表
+            </summary>
+        </member>
+        <member name="T:Supermarket.Models.FormId">
+            <summary>
+            用户FormId
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.FormId.Id">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.FormId.FormIds">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.FormId.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.FormId.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.FormId.Users">
+            <summary>
+            外键关联
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.FormId.Comment1">
+            <summary>
+            备用1
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.FormId.Comment2">
+            <summary>
+            备用2
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.FormId.Comment3">
+            <summary>
+            备用3
+            </summary>
+        </member>
+        <member name="T:Supermarket.Models.Goods">
+            <summary>
+            商品表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Goods.GoodsId">
+            <summary>
+            商品id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Goods.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Goods.Img">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Goods.Notice">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Goods.NewPrice">
+            <summary>
+            现价
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Goods.OldPrice">
+            <summary>
+            原价
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Goods.Comment1">
+            <summary>
+            备用1
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Goods.Comment2">
+            <summary>
+            备用2
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Goods.Comment3">
+            <summary>
+            备用3
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Goods.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Goods.UpDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Goods.GoodsKindId">
+            <summary>
+            商品种类Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Goods.GoodsKinds">
+            <summary>
+            外键关联
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Goods.SysUserId">
+            <summary>
+            系统用户Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Goods.SysUsers">
+            <summary>
+            外键关联
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Goods.OrderGoodss">
+            <summary>
+            多对多订单商品表
+            </summary>
+        </member>
+        <member name="T:Supermarket.Models.GoodsBigKind">
+            <summary>
+            商品大类表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsBigKind.GoodsBigKindId">
+            <summary>
+            商品大类id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsBigKind.Name">
+            <summary>
+            大类名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsBigKind.Index">
+            <summary>
+            排序值
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsBigKind.Img">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsBigKind.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsBigKind.UpDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsBigKind.SysUserId">
+            <summary>
+            系统用户Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsBigKind.Comment1">
+            <summary>
+            备用1
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsBigKind.Comment2">
+            <summary>
+            备用2
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsBigKind.Comment3">
+            <summary>
+            备用3
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsBigKind.SysUsers">
+            <summary>
+            外键关联
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsBigKind.GoodsKinds">
+            <summary>
+            商品表
+            </summary>
+        </member>
+        <member name="T:Supermarket.Models.GoodsKind">
+            <summary>
+            商品种类表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsKind.GoodsKindId">
+            <summary>
+            商品种类id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsKind.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsKind.Index">
+            <summary>
+            排序值
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsKind.Img">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsKind.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsKind.UpDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsKind.SysUserId">
+            <summary>
+            系统用户Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsKind.GoodsBigKindId">
+            <summary>
+             商品大类id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsKind.Comment1">
+            <summary>
+            备用1
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsKind.Comment2">
+            <summary>
+            备用2
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsKind.Comment3">
+            <summary>
+            备用3
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsKind.SysUsers">
+            <summary>
+            外键关联
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsKind.GoodsBigKinds">
+            <summary>
+            外键关联
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.GoodsKind.Goodss">
+            <summary>
+            商品表
+            </summary>
+        </member>
+        <member name="T:Supermarket.Models.InitModels.SupermarketDbContext">
+            <summary>
+            定义项目上下文
+            </summary>
+        </member>
+        <member name="M:Supermarket.Models.InitModels.SupermarketDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Supermarket.Models.InitModels.SupermarketDbContext})">
+            <summary>
+            构造项目上下文
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="M:Supermarket.Models.InitModels.SupermarketDbContext.#ctor">
+            <summary>
+            重构项目上下文
+            </summary>
+        </member>
+        <member name="M:Supermarket.Models.InitModels.SupermarketDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="M:Supermarket.Models.InitModels.SupermarketDbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="optionsBuilder"></param>
+        </member>
+        <member name="P:Supermarket.Models.InitModels.SupermarketDbContext.SysUsers">
+            <summary>
+            系统用户表(商家)
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.InitModels.SupermarketDbContext.User">
+            <summary>
+            用户表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.InitModels.SupermarketDbContext.Addresss">
+            <summary>
+            地址管理表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.InitModels.SupermarketDbContext.Goodss">
+            <summary>
+            商品表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.InitModels.SupermarketDbContext.GoodsKinds">
+            <summary>
+            商品种类表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.InitModels.SupermarketDbContext.GoodsBigKinds">
+            <summary>
+            商品种类表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.InitModels.SupermarketDbContext.Orders">
+            <summary>
+            订单表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.InitModels.SupermarketDbContext.AppCarts">
+            <summary>
+            购物车表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.InitModels.SupermarketDbContext.OrderGoods">
+            <summary>
+            订单、商品多对多表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.InitModels.SupermarketDbContext.Parass">
+            <summary>
+            参数表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.InitModels.SupermarketDbContext.FormIds">
+            <summary>
+            FromId表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.InitModels.SupermarketDbContext.Lotterys">
+            <summary>
+            FromId表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.InitModels.SupermarketDbContext.Winners">
+            <summary>
+            中奖名单表
+            </summary>
+        </member>
+        <member name="T:Supermarket.Models.Lottery">
+            <summary>
+            奖品表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Lottery.Id">
+            <summary>
+            奖品id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Lottery.Name">
+            <summary>
+            奖品名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Lottery.Probability">
+            <summary>
+            中奖概率
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Lottery.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Lottery.EditDate">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Lottery.Comment1">
+            <summary>
+            备用1
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Lottery.Comment2">
+            <summary>
+            备用2
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Lottery.Comment3">
+            <summary>
+            备用3
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Lottery.SysUserId">
+            <summary>
+            所属商家id
+            </summary>
+        </member>
+        <member name="T:Supermarket.Models.PayType">
+            <summary>
+            支付方式
+            </summary>
+        </member>
+        <member name="T:Supermarket.Models.PayState">
+            <summary>
+            交易状态
+            </summary> 
+        </member>
+        <member name="T:Supermarket.Models.Order">
+            <summary>
+            订单表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Order.OrderId">
+            <summary>
+            订单id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Order.OrderNo">
+            <summary>
+            订单编号
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Order.Name">
+            <summary>
+            订单名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Order.Price">
+            <summary>
+            总额
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Order.Comments">
+            <summary>
+            注释
+            </summary> 
+        </member>
+        <member name="P:Supermarket.Models.Order.PayType">
+            <summary>
+            支付方式
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Order.PayState">
+            <summary>
+            交易状态
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Order.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Order.AddressId">
+            <summary>
+            地址ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Order.Addresss">
+            <summary>
+            外键关联
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Order.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Order.Comment1">
+            <summary>
+            备用1
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Order.Comment2">
+            <summary>
+            备用2
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Order.Comment3">
+            <summary>
+            备用3
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Order.RefuseReason">
+            <summary>
+            拒绝原因
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Order.Users">
+            <summary>
+            外键关联
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Order.SysUserId">
+            <summary>
+            系统用户Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Order.SysUsers">
+            <summary>
+            外键关联
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Order.OrderGoodss">
+            <summary>
+            多对多订单商品表
+            </summary>
+        </member>
+        <member name="T:Supermarket.Models.OrderGoods">
+            <summary>
+            订单、商品多对多表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.OrderGoods.OrderId">
+            <summary>
+            订单id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.OrderGoods.Num">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.OrderGoods.Comment2">
+            <summary>
+            备用2
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.OrderGoods.Comment3">
+            <summary>
+            备用3
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.OrderGoods.Order">
+            <summary>
+            订单表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.OrderGoods.GoodsId">
+            <summary>
+            商品id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.OrderGoods.Goods">
+            <summary>
+            商品表
+            </summary>
+        </member>
+        <member name="T:Supermarket.Models.Paras">
+            <summary>
+            参数表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Paras.Id">
+            <summary>
+            参数ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Paras.Name">
+            <summary>
+            参数名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Paras.Describe">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Paras.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Paras.UpDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Paras.Comment1">
+            <summary>
+            备用1
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Paras.Comment2">
+            <summary>
+            备用2
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Paras.Comment3">
+            <summary>
+            备用3
+            </summary>
+        </member>
+        <member name="T:Supermarket.Models.SysUser">
+            <summary>
+            系统用户表(商家)
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.SysUserId">
+            <summary>
+            商家id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.Name">
+            <summary>
+            商家名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.TelPhone">
+            <summary>
+            商家座机
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.MobilePhone">
+            <summary>
+            商家手机
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.Account">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.Pwd">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.Token">
+            <summary>
+            令牌
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.Salt">
+            <summary>
+            盐
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.Phone">
+            <summary>
+            商家电话
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.Addr">
+            <summary>
+            商家地址
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.Comments">
+            <summary>
+            注释
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.Ip">
+            <summary>
+            登录Ip
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.Longitude">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.Latitude">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.Comment1">
+            <summary>
+            备用1
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.Comment2">
+            <summary>
+            备用2
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.Comment3">
+            <summary>
+            备用3
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.Price">
+            <summary>
+            起步价
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.TemIdOrder">
+            <summary>
+            模板Id订单
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.TemIdSend">
+            <summary>
+            模板Id发货
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.TemIdAccept">
+            <summary>
+            模板Id接单
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.TemIdRefuse">
+            <summary>
+            模板Id拒绝
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.IsOpen">
+            <summary>
+            是否开业
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.Popenid">
+            <summary>
+            公共号用户ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.GoodsKinds">
+            <summary>
+            商品种类表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.Orders">
+            <summary>
+            订单表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.SysUser.Goodss">
+            <summary>
+            商品表
+            </summary>
+        </member>
+        <member name="T:Supermarket.Models.User">
+            <summary>
+            用户表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.User.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.User.OpenId">
+            <summary>
+            第三方唯一标识Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.User.Name">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.User.Avatar">
+            <summary>
+            用户头像
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.User.Ip">
+            <summary>
+            登录ip
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.User.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.User.UpDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.User.Comment1">
+            <summary>
+            备用1
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.User.Comment2">
+            <summary>
+            备用2
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.User.Comment3">
+            <summary>
+            备用3
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.User.Addresss">
+            <summary>
+            地址管理表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.User.Orders">
+            <summary>
+            订单表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.User.FormIds">
+            <summary>
+            FormId表
+            </summary>
+        </member>
+        <member name="T:Supermarket.Models.Winner">
+            <summary>
+            中奖名单表
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Winner.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Winner.OpenId">
+            <summary>
+            第三方唯一标识Id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Winner.Name">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Winner.Avatar">
+            <summary>
+            用户头像
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Winner.Ip">
+            <summary>
+            登录ip
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Winner.CreatDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Winner.WinDate">
+            <summary>
+            中奖日期
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Winner.LotteryId">
+            <summary>
+            奖品id
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Winner.SysUserId">
+            <summary>
+            所属商家
+            </summary>
+        </member>
+        <member name="P:Supermarket.Models.Winner.Phone">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="T:Supermarket.Utility.AppToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Supermarket.Utility.AppToken.GetAppToken(Supermarket.Dto.TemDto)">
+            <summary>
+            获取小程序
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Supermarket.Utility.SendTem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Supermarket.Utility.SendTem.SendMail(Supermarket.Dto.TemDto)">
+            <summary>
+            订单发货提醒
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Supermarket.Utility.SmsSend">
+            <summary>
+            发送短信
+            </summary>
+        </member>
+        <member name="T:Supermarket.Utility.RepData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Supermarket.Utility.RepData.bacthseq">
+            <summary>
+            随机数
+            </summary>
+        </member>
+        <member name="P:Supermarket.Utility.RepData.code">
+            <summary>
+            返回码
+            </summary>
+        </member>
+        <member name="P:Supermarket.Utility.RepData.msg">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:Supermarket.Utility.RepData.success">
+            <summary>
+            状态码
+            </summary>
+        </member>
+        <member name="T:Supermarket.Utility.Token">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Supermarket.Utility.Token.GetToken(Supermarket.Dto.TemDto)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Utility.Token.MathLat(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            经纬度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Utility.Token.GetDistance(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            计算距离接口
+            </summary>
+            <param name="lat1"></param>
+            <param name="lng1"></param>
+            <param name="lat2"></param>
+            <param name="lng2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Supermarket.Utility.Token.HttpMap(System.String,System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="addr"></param>
+            <param name="SysUserId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EcommerceSys.Controllers.AuthCodeController">
+            <summary>
+            验证码生成控制器
+            </summary>
+        </member>
+        <member name="M:EcommerceSys.Controllers.AuthCodeController.Creat">
+            <summary>
+            验证码生成
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:EcommerceSys.Controllers.AuthCodeController.CreateRandomNum(System.Int32)">
+            <summary>
+            生成随机字符串
+            </summary>
+            <param name="NumCount">位数</param>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceSys.Controllers.AuthCodeController.Get">
+            <summary>
+            生成验证码图片
+            </summary>
+            <returns>返回结果</returns>
+        </member>
+        <member name="T:EcommerceSys.Controllers.ChuangYingController">
+             <summary>
+            微信支付控制器
+             </summary>
+        </member>
+        <member name="M:EcommerceSys.Controllers.ChuangYingController.GetToken">
+            <summary>
+            获取access token（core token）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceSys.Controllers.ChuangYingController.GetOpenId(System.String)">
+            <summary>
+            获取openid
+            </summary>
+            <param name="code">微信登录code</param>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceSys.Controllers.ChuangYingController.GetToken_huawei">
+            <summary>
+            获取Access Token 华为
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceSys.Controllers.ChuangYingController.IsCare(System.String,System.String)">
+            <summary>
+            查看用户是否已经关注公众号
+            </summary>
+            <param name="access_token"></param>
+            <param name="OpenId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EcommerceSys.Controllers.VersionController">
+            <summary>
+            app版本控制器
+            </summary>
+        </member>
+        <member name="M:EcommerceSys.Controllers.VersionController.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="hostingEnvironment"></param>
+        </member>
+        <member name="M:EcommerceSys.Controllers.VersionController.GetVersion">
+            <summary>
+            获取服务器端版本号
+            </summary>
+            <returns>返回版本号</returns>
+        </member>
+        <member name="T:EcommerceSys.Controllers.WePayController">
+             <summary>
+            微信支付控制器
+             </summary>
+        </member>
+        <member name="M:EcommerceSys.Controllers.WePayController.GetOpenId(System.String)">
+            <summary>
+            获取openid
+            </summary>
+            <param name="code">微信登录code</param>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceSys.Controllers.WePayController.Pay(EcommerceSys.Controllers.TestDto)">
+            <summary>
+            获取唤起微信支付信息
+            </summary>
+            <param name="body"></param>
+            <param name="totalFee"></param>
+            <param name="openId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EcommerceSys.Controllers.WePayController.Refund">
+            <summary>
+            申请退款
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:EcommerceSys.Dto.WePayDto">
+            <summary>
+            微信支付数据传输对象
+            </summary>
+        </member>
+        <member name="T:EcommerceSys.Utility.PwdTransition">
+            <summary>
+            密码转换
+            </summary>
+        </member>
+        <member name="M:EcommerceSys.Utility.PwdTransition.ToHash(System.String,System.String)">
+            <summary>
+            input pwd + salt to hash
+            </summary>
+            <param name="pwd">密码</param>
+            <param name="Salt">盐</param>
+            <returns>哈希密码</returns>
+        </member>
+        <member name="T:WePay.WxPayConfig">
+            配置账号信息
+        </member>
+        <member name="M:WePay.WxPayData.SetValue(System.String,System.Object)">
+                * 设置某个字段的值
+                * @param key 字段名
+                 * @param value 字段值
+        </member>
+        <member name="M:WePay.WxPayData.GetValue(System.String)">
+                * 根据字段名获取某个字段的值
+                * @param key 字段名
+                 * @return key对应的字段值
+        </member>
+        <member name="M:WePay.WxPayData.IsSet(System.String)">
+            判断某个字段是否已设置
+            @param key 字段名
+            @return 若字段key已被设置，则返回true，否则返回false
+        </member>
+        <member name="M:WePay.WxPayData.ToXml">
+             @将Dictionary转成xml
+             @return 经转换得到的xml串
+             @throws WxPayException
+            
+        </member>
+        <member name="M:WePay.WxPayData.FromXml(System.String)">
+            @将xml转为WxPayData对象并返回对象内部的数据
+            @param string 待转换的xml串
+            @return 经转换得到的Dictionary
+            @throws WxPayException
+        </member>
+        <member name="M:WePay.WxPayData.ToUrl">
+            @Dictionary格式转化成url参数格式
+            @ return url格式串, 该串不包含sign字段值
+        </member>
+        <member name="M:WePay.WxPayData.ToJson">
+                * @Dictionary格式化成Json
+                 * @return json串数据
+        </member>
+        <member name="M:WePay.WxPayData.ToPrintStr">
+            @values格式化成能在Web页面上显示的结果（因为web页面上不能直接输出xml格式的字符串）
+        </member>
+        <member name="M:WePay.WxPayData.MakeSign">
+            @生成签名，详见签名生成算法
+            @return 签名, sign字段不参加签名
+        </member>
+        <member name="M:WePay.WxPayData.CheckSign">
+            
+            检测签名是否正确
+            正确返回true，错误抛异常
+        </member>
+        <member name="M:WePay.WxPayData.GetValues">
+            @获取Dictionary
+        </member>
+        <member name="T:WePay.JsApiPay">
+            <summary>
+            微信公众号支付
+            </summary>
+        </member>
+        <member name="P:WePay.JsApiPay._unifiedOrderResult">
+            <summary>
+            统一下单接口返回结果
+            </summary>
+        </member>
+        <member name="M:WePay.JsApiPay.GetUnifiedOrderResult(System.String,System.String,System.Int32,System.String)">
+            调用统一下单，获得下单结果
+            @return 统一下单结果
+            @失败时抛异常WxPayException
+        </member>
+        <member name="M:WePay.JsApiPay.GetJsApiParameters">
+             
+            从统一下单成功返回的数据中获取微信浏览器调起jsapi支付所需的参数，
+            微信浏览器调起JSAPI时的输入参数格式如下：
+            {
+              "appId" : "wx2421b1c4370ec43b",     //公众号名称，由商户传入     
+              "timeStamp":" 1395712654",         //时间戳，自1970年以来的秒数     
+              "nonceStr" : "e61463f8efa94090b1f366cccfbbb444", //随机串     
+              "package" : "prepay_id=u802345jgfjsdfgsdg888",     
+              "signType" : "MD5",         //微信签名方式:    
+              "paySign" : "70EA570631E4BB79628FBCA90534C63FF7FADD89" //微信签名 
+            }
+            @return string 微信浏览器调起JSAPI时的输入参数，json格式可以直接做参数用
+            更详细的说明请参考网页端调起支付API：http://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_7
+            
+        </member>
+        <member name="M:WePay.WxPayApi.Micropay(WePay.WxPayData,System.Int32)">
+            提交被扫支付API
+            收银员使用扫码设备读取微信用户刷卡授权码以后，二维码或条码信息传送至商户收银台，
+            由商户收银台或者商户后台调用该接口发起支付。
+            @param WxPayData inputObj 提交给被扫支付API的参数
+            @param int timeOut 超时时间
+            @throws WxPayException
+            @return 成功时返回调用结果，其他抛异常
+        </member>
+        <member name="M:WePay.WxPayApi.OrderQuery(WePay.WxPayData,System.Int32)">
+               
+            查询订单
+            @param WxPayData inputObj 提交给查询订单API的参数
+            @param int timeOut 超时时间
+            @throws WxPayException
+            @return 成功时返回订单查询结果，其他抛异常
+        </member>
+        <member name="M:WePay.WxPayApi.Reverse(WePay.WxPayData,System.Int32)">
+            
+            撤销订单API接口
+            @param WxPayData inputObj 提交给撤销订单API接口的参数，out_trade_no和transaction_id必填一个
+            @param int timeOut 接口超时时间
+            @throws WxPayException
+            @return 成功时返回API调用结果，其他抛异常
+        </member>
+        <member name="M:WePay.WxPayApi.Refund(WePay.WxPayData,System.Int32)">
+            
+            申请退款
+            @param WxPayData inputObj 提交给申请退款API的参数
+            @param int timeOut 超时时间
+            @throws WxPayException
+            @return 成功时返回接口调用结果，其他抛异常
+        </member>
+        <member name="M:WePay.WxPayApi.RefundQuery(WePay.WxPayData,System.Int32)">
+            
+            查询退款
+            提交退款申请后，通过该接口查询退款状态。退款有一定延时，
+            用零钱支付的退款20分钟内到账，银行卡支付的退款3个工作日后重新查询退款状态。
+            out_refund_no、out_trade_no、transaction_id、refund_id四个参数必填一个
+            @param WxPayData inputObj 提交给查询退款API的参数
+            @param int timeOut 接口超时时间
+            @throws WxPayException
+            @return 成功时返回，其他抛异常
+        </member>
+        <member name="M:WePay.WxPayApi.DownloadBill(WePay.WxPayData,System.Int32)">
+            下载对账单
+            @param WxPayData inputObj 提交给下载对账单API的参数
+            @param int timeOut 接口超时时间
+            @throws WxPayException
+            @return 成功时返回，其他抛异常
+        </member>
+        <member name="M:WePay.WxPayApi.ShortUrl(WePay.WxPayData,System.Int32)">
+            
+            转换短链接
+            该接口主要用于扫码原生支付模式一中的二维码链接转成短链接(weixin://wxpay/s/XXXXXX)，
+            减小二维码数据量，提升扫描速度和精确度。
+            @param WxPayData inputObj 提交给转换短连接API的参数
+            @param int timeOut 接口超时时间
+            @throws WxPayException
+            @return 成功时返回，其他抛异常
+        </member>
+        <member name="M:WePay.WxPayApi.UnifiedOrder(WePay.WxPayData,System.Int32)">
+            
+            统一下单
+            @param WxPaydata inputObj 提交给统一下单API的参数
+            @param int timeOut 超时时间
+            @throws WxPayException
+            @return 成功时返回，其他抛异常
+        </member>
+        <member name="M:WePay.WxPayApi.CloseOrder(WePay.WxPayData,System.Int32)">
+            
+            关闭订单
+            @param WxPayData inputObj 提交给关闭订单API的参数
+            @param int timeOut 接口超时时间
+            @throws WxPayException
+            @return 成功时返回，其他抛异常
+        </member>
+        <member name="M:WePay.WxPayApi.ReportCostTime(System.String,System.Int32,WePay.WxPayData)">
+            
+            测速上报
+            @param string interface_url 接口URL
+            @param int timeCost 接口耗时
+            @param WxPayData inputObj参数数组
+        </member>
+        <member name="M:WePay.WxPayApi.Report(WePay.WxPayData,System.Int32)">
+            
+            测速上报接口实现
+            @param WxPayData inputObj 提交给测速上报接口的参数
+            @param int timeOut 测速上报接口超时时间
+            @throws WxPayException
+            @return 成功时返回测速上报接口返回的结果，其他抛异常
+        </member>
+        <member name="M:WePay.WxPayApi.GenerateOutTradeNo">
+                * 根据当前系统时间加随机序列来生成订单号
+                 * @return 订单号
+        </member>
+        <member name="M:WePay.WxPayApi.GenerateTimeStamp">
+                * 生成时间戳，标准北京时间，时区为东八区，自1970年1月1日 0点0分0秒以来的秒数
+                 * @return 时间戳
+        </member>
+        <member name="M:WePay.WxPayApi.GenerateNonceStr">
+            生成随机串，随机串包含字母或数字
+            @return 随机串
+        </member>
+    </members>
+</doc>

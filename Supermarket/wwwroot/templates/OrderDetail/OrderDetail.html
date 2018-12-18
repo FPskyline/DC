@@ -1,0 +1,64 @@
+<div id="ribbon">
+    <ol class="breadcrumb">
+        <li>
+            <span class="glyphicon glyphicon-home"></span>
+            首页
+        </li>
+        <li>订单管理</li>
+        <li class="active">订单管理</li>
+    </ol>
+</div>
+<div>
+
+    <!--   列表-->
+    <table class="table main-table table-hover table-bordered" style="margin: 5px">
+        <thead>
+            <tr>
+                <th class="text-center">订单编号</th>
+                <th class="text-center">总额</th>
+                <th class="text-center">支付方式</th>
+                <th class="text-center">订单状态</th>
+                <th class="text-center">创建时间</th>
+                <th class="text-center">用户名称</th>
+                <th class="text-center">送货地址</th>
+                <th class="text-center">所属商家</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{OrderInfos.orderNo}}</td>
+                <td>￥{{OrderInfos.price}}</td>
+                <td>{{OrderInfos.payType==1?"在线支付":"货到付款"}}</td>
+                <td>{{PayState(OrderInfos.payState)}}</td>
+                <td>{{OrderInfos.creatDate|date:'yyyy-MM-dd HH:mm:ss '}}</td>
+                <td>{{OrderInfos.userName}}</td>
+                <td>{{OrderInfos.addr}}<br />{{OrderInfos.contactName}}<br/>{{OrderInfos.contactPhone}}</td>
+                <td>{{OrderInfos.sysUserName}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+    <!--商品列表-->
+    <table class="table main-table table-hover table-bordered" style="margin: 5px">
+        <thead>
+            <tr>
+                <th class="text-center">商品图片</th>
+                <th class="text-center">商品名称</th>
+                <th class="text-center">商品单价</th>
+                <th class="text-center">商品数量</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in OrderInfos.godDtos">
+                <td><img  ng-src="{{item.godImg}}" style="width:72px;height:72px;"/></td>
+                <td>{{item.godName}}</td>
+                <td>{{item.newPrice}}</td>
+                <td>{{item.num}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+

@@ -1,0 +1,115 @@
+
+<div class="sidebar_first">
+  <div class="SideBar-User">
+    <!--<p>{{UserName}}</p>-->
+  </div>
+
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default" ng-if="SysUserShow">
+      <div class="panel-heading">
+        <div class="panel-title" data-toggle="collapse" data-parent="#accordion" data-target="#SysUser">
+          <a href="">
+            <i class="fa fa-lg fa-superpowers SideBar-faicon"></i>
+            <span>商家管理</span>
+          </a>
+        </div>
+      </div>
+      <div id="SysUser" class="panel-collapse collapse">
+        <div class="panel-body">
+          <ul>
+            <li><a href="#!/SysUser"><span>商家列表</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default" ng-if="UserShow">
+      <div class="panel-heading">
+        <div class="panel-title" data-toggle="collapse" data-parent="#accordion" data-target="#User">
+          <a href="">
+            <i class="fa fa-lg fa-user-circle SideBar-faicon"></i>
+            <span>用户管理</span>
+          </a>
+        </div>
+      </div>
+      <div id="User" class="panel-collapse collapse">
+        <div class="panel-body">
+          <ul>
+            <li><a href="#!/User"><span>用户列表</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#Goods">
+          <a href="">
+            <i class="fa fa-lg fa-shopping-cart SideBar-faicon"></i>
+            <span>商品管理</span>
+          </a>
+        </div>
+      </div>
+      <div id="Goods" class="panel-collapse collapse">
+        <div class="panel-body">
+          <ul>
+            <li><a href="#!/GoodsBigKind"><span>商品大类</span></a></li>
+            <li><a href="#!/GoodsKind"><span>商品子类</span></a></li>
+            <li><a href="#!/Goods"><span>商品列表</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--<div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#Address">
+          <a href="">
+            <i class="fa fa-lg fa-home SideBar-faicon"></i>
+            <span>地址管理</span>
+          </a>
+        </div>
+      </div>
+      <div id="Address" class="panel-collapse collapse">
+        <div class="panel-body">
+          <ul>
+            <li><a href="#!/Address"><span>地址列表</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>-->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#Order">
+          <a href="">
+            <i class="fa fa-lg fa-wpforms SideBar-faicon"></i>
+            <span>订单管理</span>
+          </a>
+        </div>
+      </div>
+      <div id="Order" class="panel-collapse collapse">
+        <div class="panel-body">
+          <ul>
+            <li><a href="#!/Order"><span>订单列表</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#Lottery">
+          <a href="">
+            <i class="fa fa-lg fa-empire SideBar-faicon"></i>
+            <span>抽奖管理</span>
+          </a>
+        </div>
+      </div>
+      <div id="Lottery" class="panel-collapse collapse">
+        <div class="panel-body">
+          <ul>
+            <li><a href="#!/Lottery"><span>奖品列表</span></a></li>
+            <li><a href="#!/WinList"><span>中奖名单</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

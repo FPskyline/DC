@@ -1,0 +1,231 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <ApplicationIcon />
+    <OutputTypeEx>Exe</OutputTypeEx>
+    <StartupObject />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>Supermarket.xml</DocumentationFile>
+    <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8</PackageTargetFallback>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\.idea\**" />
+    <Compile Remove="wwwroot\Lottery\**" />
+    <Compile Remove="wwwroot\templates\ShopCart\**" />
+    <Content Remove="wwwroot\.idea\**" />
+    <Content Remove="wwwroot\Lottery\**" />
+    <Content Remove="wwwroot\templates\ShopCart\**" />
+    <EmbeddedResource Remove="wwwroot\.idea\**" />
+    <EmbeddedResource Remove="wwwroot\Lottery\**" />
+    <EmbeddedResource Remove="wwwroot\templates\ShopCart\**" />
+    <None Remove="wwwroot\.idea\**" />
+    <None Remove="wwwroot\Lottery\**" />
+    <None Remove="wwwroot\templates\ShopCart\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Properties\PublishProfiles\supermarket - FTP.pubxml" />
+    <None Remove="Properties\PublishProfiles\supermarket - Web Deploy.pubxml" />
+  </ItemGroup>
+
+  <!--<ItemGroup>
+    <Content Include="wwwroot\templates\OrderDetail\OrderDetail.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\templates\OrderDetail\OrderDetailCtrl.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\templates\OrderDetail\OrderDetailService.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>-->
+  <!--<ItemGroup>
+    <Content Include="wwwroot\css\bootstrap.min.css" />
+    <Content Include="wwwroot\css\Main.css" />
+    <Content Include="wwwroot\css\Manage-Header.css" />
+    <Content Include="wwwroot\css\Manage-Public.css" />
+    <Content Include="wwwroot\css\Manage-SideBar.css" />
+    <Content Include="wwwroot\css\Member.css" />
+    <Content Include="wwwroot\css\toastr.css" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="wwwroot\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="wwwroot\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="wwwroot\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="wwwroot\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="wwwroot\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="wwwroot\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="wwwroot\fonts\icomoon.eot" />
+    <Content Include="wwwroot\fonts\icomoon.svg" />
+    <Content Include="wwwroot\fonts\icomoon.ttf" />
+    <Content Include="wwwroot\fonts\icomoon.woff" />
+    <Content Include="wwwroot\img\Logoyi.png" />
+    <Content Include="wwwroot\index.html" />
+    <Content Include="wwwroot\js\app.js" />
+    <Content Include="wwwroot\js\controllers\HeaderController.js" />
+    <Content Include="wwwroot\js\controllers\MainController.js" />
+    <Content Include="wwwroot\js\controllers\SideBarController.js" />
+    <Content Include="wwwroot\js\services\MainServices.js" />
+    <Content Include="wwwroot\lib\33.js" />
+    <Content Include="wwwroot\lib\angular-city-select.js" />
+    <Content Include="wwwroot\lib\angular-ui-router.js" />
+    <Content Include="wwwroot\lib\angular-ui-router.min.js" />
+    <Content Include="wwwroot\lib\angular\angular-animate.js" />
+    <Content Include="wwwroot\lib\angular\angular-animate.min.js" />
+    <Content Include="wwwroot\lib\angular\angular-animate.min.js.map" />
+    <Content Include="wwwroot\lib\angular\angular-aria.js" />
+    <Content Include="wwwroot\lib\angular\angular-aria.min.js" />
+    <Content Include="wwwroot\lib\angular\angular-aria.min.js.map" />
+    <Content Include="wwwroot\lib\angular\angular-cookies.js" />
+    <Content Include="wwwroot\lib\angular\angular-cookies.min.js" />
+    <Content Include="wwwroot\lib\angular\angular-cookies.min.js.map" />
+    <Content Include="wwwroot\lib\angular\angular-csp.css" />
+    <Content Include="wwwroot\lib\angular\angular-loader.js" />
+    <Content Include="wwwroot\lib\angular\angular-loader.min.js" />
+    <Content Include="wwwroot\lib\angular\angular-loader.min.js.map" />
+    <Content Include="wwwroot\lib\angular\angular-message-format.js" />
+    <Content Include="wwwroot\lib\angular\angular-message-format.min.js" />
+    <Content Include="wwwroot\lib\angular\angular-message-format.min.js.map" />
+    <Content Include="wwwroot\lib\angular\angular-messages.js" />
+    <Content Include="wwwroot\lib\angular\angular-messages.min.js" />
+    <Content Include="wwwroot\lib\angular\angular-messages.min.js.map" />
+    <Content Include="wwwroot\lib\angular\angular-mocks.js" />
+    <Content Include="wwwroot\lib\angular\angular-parse-ext.js" />
+    <Content Include="wwwroot\lib\angular\angular-parse-ext.min.js" />
+    <Content Include="wwwroot\lib\angular\angular-parse-ext.min.js.map" />
+    <Content Include="wwwroot\lib\angular\angular-resource.js" />
+    <Content Include="wwwroot\lib\angular\angular-resource.min.js" />
+    <Content Include="wwwroot\lib\angular\angular-resource.min.js.map" />
+    <Content Include="wwwroot\lib\angular\angular-route.js" />
+    <Content Include="wwwroot\lib\angular\angular-route.min.js" />
+    <Content Include="wwwroot\lib\angular\angular-route.min.js.map" />
+    <Content Include="wwwroot\lib\angular\angular-sanitize.js" />
+    <Content Include="wwwroot\lib\angular\angular-sanitize.min.js" />
+    <Content Include="wwwroot\lib\angular\angular-sanitize.min.js.map" />
+    <Content Include="wwwroot\lib\angular\angular-scenario.js" />
+    <Content Include="wwwroot\lib\angular\angular-touch.js" />
+    <Content Include="wwwroot\lib\angular\angular-touch.min.js" />
+    <Content Include="wwwroot\lib\angular\angular-touch.min.js.map" />
+    <Content Include="wwwroot\lib\angular\angular.js" />
+    <Content Include="wwwroot\lib\angular\angular.min.js" />
+    <Content Include="wwwroot\lib\angular\angular.min.js.map" />
+    <Content Include="wwwroot\lib\angular\errors.json" />
+    <Content Include="wwwroot\lib\angular\i18n\angular-locale_zh-cn.js" />
+    <Content Include="wwwroot\lib\angular\i18n\angular-locale_zh-hans-cn.js" />
+    <Content Include="wwwroot\lib\angular\i18n\angular-locale_zh-hk.js" />
+    <Content Include="wwwroot\lib\angular\i18n\angular-locale_zh-tw.js" />
+    <Content Include="wwwroot\lib\angular\i18n\angular-locale_zh.js" />
+    <Content Include="wwwroot\lib\angular\version.json" />
+    <Content Include="wwwroot\lib\angular\version.txt" />
+    <Content Include="wwwroot\lib\bootstrap.js" />
+    <Content Include="wwwroot\lib\bootstrap.min.js" />
+    <Content Include="wwwroot\lib\jquery-2.0.3.min.js" />
+    <Content Include="wwwroot\lib\jquery.js" />
+    <Content Include="wwwroot\lib\jweixin-1.2.0.js" />
+    <Content Include="wwwroot\lib\ng-file-upload-shim.min.js" />
+    <Content Include="wwwroot\lib\ng-file-upload.min.js" />
+    <Content Include="wwwroot\lib\toastr.js" />
+    <Content Include="wwwroot\lib\toastr.min.js" />
+    <Content Include="wwwroot\lib\ui-bootstrap-tpls.js" />
+    <Content Include="wwwroot\lib\ui-bootstrap-tpls.min.js" />
+    <Content Include="wwwroot\lib\ui-bootstrap.js" />
+    <Content Include="wwwroot\lib\ui-bootstrap.min.js" />
+    <Content Include="wwwroot\templates\Address\Addresss.html" />
+    <Content Include="wwwroot\templates\GoodsKind\GoodsKind.html" />
+    <Content Include="wwwroot\templates\GoodsKind\GoodsKindCtrl.js" />
+    <Content Include="wwwroot\templates\GoodsKind\GoodsKindService.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\templates\Goods\Goods.html" />
+    <Content Include="wwwroot\templates\Header.html" />
+    <Content Include="wwwroot\templates\Login\Login.html" />
+    <Content Include="wwwroot\templates\Login\LoginCtrl.js" />
+    <Content Include="wwwroot\templates\Login\LoginService.js" />
+    <Content Include="wwwroot\templates\Main.html" />
+    <Content Include="wwwroot\templates\Order\Order.html" />
+    <Content Include="wwwroot\templates\Order\OrderCtrl.js" />
+    <Content Include="wwwroot\templates\Order\OrderService.js" />
+    <Content Include="wwwroot\templates\SideBar.html" />
+    <Content Include="wwwroot\templates\SysUser\SysUserCtrl.js" />
+    <Content Include="wwwroot\templates\SysUser\SysUserService.js" />
+    <Content Include="wwwroot\templates\User\UserCtrl.js" />
+    <Content Include="wwwroot\templates\User\UserService.js" />
+    <Content Include="wwwroot\templates\User\User.html" />
+  </ItemGroup>-->
+  <ItemGroup>
+    <PackageReference Include="Jiguang.JPush" Version="1.0.8" />
+    <PackageReference Include="LitJsonCore" Version="1.0.1" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.WebApiCompatShim" Version="1.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.WebSockets" Version="1.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
+    <PackageReference Include="Mime" Version="2.3.2" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.8-dmr" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="1.0.0" />
+    <PackageReference Include="ZKWeb.System.Drawing" Version="3.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="wwwroot\Files\Pictures\" />
+    <Folder Include="wwwroot\Files\MP3\" />
+    <Folder Include="wwwroot\js\directives\" />
+    <Folder Include="cert\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\Files\Version\version.txt" />
+  </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="http://json.schemastore.org/appveyor" /></VisualStudio></ProjectExtensions>
+
+</Project>

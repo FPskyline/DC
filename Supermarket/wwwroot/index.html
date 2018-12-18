@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="ManageApp">
+<head>
+  <meta charset="utf-8">
+  <title>小程序-超市后台管理系统</title>
+  <link rel="icon" href="../img/logo.ico" mce_href="../img/logo.ico" type="image/x-icon">
+  <!--<link rel="shortcut icon" href="../img/favico.ico" mce_href="../img/favico.ico" type="image/x-icon">-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/Global.css">
+  <link rel="stylesheet" href="css/Manage-Header.css">
+  <link rel="stylesheet" href="css/Manage-SideBar.css">
+  <link rel="stylesheet" href="css/Member.css">
+  <link rel="stylesheet" href="css/Manage-Public.css">
+  <link rel="stylesheet" href="css/Main.css">
+  <link rel="stylesheet" href="css/toastr.css">
+  <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.css">
+  <!--页面样式表-->
+  <link rel="stylesheet" href="templates/Login/Login.css">
+
+</head>
+<body>
+  <div>
+    <div ui-view="header"></div>
+    <div>
+      <div ui-view="SideBar" class="col-sm-2" id="SideBar"></div>
+      <div ui-view="main" class="col-sm-10" id="Main"></div>
+    </div>
+    <!--<div ui-view="footer" ></div>-->
+  </div>
+  <script src="lib/jquery-2.0.3.min.js"></script>
+  <script src="lib/jquery.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-animate.js"></script>
+  <script src="lib/angular/angular-sanitize.js"></script>
+  <script src="lib/angular/angular-resource.js"></script>
+  <script src="lib/angular/i18n/angular-locale_zh-cn.js"></script>
+  <script src="lib/angular-ui-router.js"></script>
+  <script src="lib/toastr.min.js"></script>
+  <script src="lib/ui-bootstrap-tpls.min.js"></script>
+  <script src="lib/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
+  <script src="lib/ng-file-upload.min.js"></script>
+  <script src="lib/33.js"></script>
+  <script src="lib/angular/angular-cookies.min.js"></script>
+
+  <script src="js/app.js"></script>
+
+  <script src="js/controllers/MainController.js"></script>
+  <script src="js/controllers/HeaderController.js"></script>
+  <script src="js/controllers/SideBarController.js"></script>
+  <script src="js/services/MainServices.js"></script>
+
+  <script src="templates/Login/LoginCtrl.js"></script>
+  <script src="templates/Login/LoginService.js"></script>
+  <script src="templates/SysUser/SysUserCtrl.js"></script>
+  <script src="templates/SysUser/SysUserService.js"></script>
+  <script src="templates/User/UserCtrl.js"></script>
+  <script src="templates/User/UserService.js"></script>
+  <script src="templates/GoodsKind/GoodsKindCtrl.js"></script>
+  <script src="templates/GoodsKind/GoodsKindService.js"></script>
+  <script src="templates/GoodsBigKind/GoodsBigKindCtrl.js"></script>
+  <script src="templates/GoodsBigKind/GoodsBigKindService.js"></script>
+  <script src="templates/Order/OrderCtrl.js"></script>
+  <script src="templates/Order/OrderService.js"></script>
+  <script src="templates/Goods/GoodsCtrl.js"></script>
+  <script src="templates/Goods/GoodsService.js"></script>
+  <script src="templates/OrderDetail/OrderDetailCtrl.js"></script>
+  <script src="templates/OrderDetail/OrderDetailService.js"></script>
+  <script src="templates/Lottery/LotteryCtrl.js"></script>
+  <script src="templates/Lottery/LotteryService.js"></script>
+
+</body>
+</html>

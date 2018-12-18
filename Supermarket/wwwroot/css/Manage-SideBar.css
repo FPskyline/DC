@@ -1,0 +1,66 @@
+#SideBar{
+  width: 15%;
+}
+.sidebar_first{
+  height: 94.1vh;
+  background: #3a3633;
+}
+.SideBar-User{
+  display: block;
+  font-size: 12px;
+  height: 42px;
+  color: #fff;
+  border: solid transparent;
+  border-width: 1px 0;
+  box-shadow: inset 1px 1px 0 rgba(0,0,0,.1), inset 0 -1px 0 rgba(0,0,0,.07);
+  width: 100%;
+  margin: 0!important;
+  border-bottom: 1px solid #525151;
+}
+.SideBar-User>p{
+  font-size:24px;
+  line-height: 40px;
+  height: 40px;
+  display: block;
+  padding: 0 20px;
+  margin: 0;
+  border-bottom: 1px solid #1A1817;
+}
+#accordion{
+  background-color: #3a3633;
+}
+#accordion .panel{
+  border: none;
+}
+#accordion .panel-heading{
+  background-color: #3a3633;
+}
+#accordion .panel-heading a{
+  text-decoration: none;
+}
+#accordion .panel-heading a:hover{
+  color: #fff;
+}
+#accordion .panel-title{
+  color: #a8a8a8;
+}
+#accordion .panel-body{
+  border: none;
+  background: rgba(49, 49, 49, 0.88);
+  padding: 0;
+}
+#accordion .panel-body ul{
+  list-style-type: none;
+  margin: 0;
+}
+#accordion .panel-body ul li{
+  font-size: 15px;
+  padding: 10px 0;
+}
+#accordion .panel-body ul li a{
+  color: #a8a8a8;
+  text-decoration: none;
+}
+#accordion .panel-body ul li a:hover{
+  color: #fff;
+}
